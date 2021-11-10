@@ -31,6 +31,7 @@ export default {
 
   computed: {
     aboutIsOpen(): boolean {
+      //@ts-ignore
       return this.store.state.aboutIsOpen
     },
   },
