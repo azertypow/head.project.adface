@@ -66,7 +66,7 @@ export default defineComponent({
 
     videoElement.srcObject = stream
 
-    nets.tinyFaceDetector.load("/").then(() => {
+    nets.tinyFaceDetector.load("https://azertypow.github.io/head.project.adface/").then(() => {
       console.log("loaded")
     }).catch(reason => {
       console.log(reason)
