@@ -4,5 +4,6 @@
  * @type {import('@vue/cli-service').ProjectOptions}
  */
 module.exports = {
-    publicPath: "https://azertypow.github.io/head.project.adface/",
+    publicPath:
+        process.env.NODE_ENV === "production" ? "https://azertypow.github.io/head.project.adface/" : "/"
 }
