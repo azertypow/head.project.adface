@@ -39,6 +39,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import {
+  detectAllFaces,
   detectSingleFace,
   draw,
   loadFaceDetectionModel,
@@ -72,6 +73,12 @@ export default defineComponent({
       console.log(reason)
     })
 
+    nets.faceLandmark68TinyNet.load("https://azertypow.github.io/head.project.adface/").then(() => {
+      console.log("loaded")
+    }).catch(reason => {
+      console.log(reason)
+    })
+
   },
 
   methods: {
@@ -80,7 +87,11 @@ export default defineComponent({
       const videoEl = this.$refs.videoElement as HTMLVideoElement
       const canvas = this.$refs.canvasOverlay as HTMLCanvasElement
 
-      if(videoEl.paused || videoEl.ended || !this.isFaceDetectionModelLoaded()) {
+      if( videoEl.paused
+          || videoEl.ended
+          || !this.isFaceDetectionModelLoaded()
+          || !this.isFaceLandmark68TinyNetModelLoaded()
+      ) {
         console.log("pas loaded")
         return setTimeout(() => this.onPlay())
       }
@@ -91,15 +102,18 @@ export default defineComponent({
         scoreThreshold: .5,
       })
 
-      const ts = Date.now()
+      // const ts = Date.now()
 
-      const result = await detectSingleFace(videoEl, options)
+      const result = await detectAllFaces(videoEl, options).withFaceLandmarks(true)
 
       // updateTimeStats(Date.now() - ts)
 
       if (result) {
         const dims = matchDimensions(canvas, videoEl, true)
-        draw.drawDetections(canvas, resizeResults(result, dims))
+        const resultsResized = resizeResults(result, dims)
+
+        draw.drawDetections(canvas, resultsResized)
+        draw.drawFaceLandmarks(canvas, resultsResized)
       }
 
       setTimeout(() => this.onPlay())
@@ -107,6 +121,10 @@ export default defineComponent({
 
     isFaceDetectionModelLoaded() {
       return !!nets.tinyFaceDetector.params
+    },
+
+    isFaceLandmark68TinyNetModelLoaded() {
+      return !!nets.faceLandmark68TinyNet.params
     },
 
   },
@@ -122,14 +140,7 @@ export default defineComponent({
   position: relative;
 }
 
-.v-home__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
+.v-home__overlay,
 .v-home__video-render {
   position: absolute;
   top: 0;
