@@ -1,16 +1,21 @@
 <template>
-  <nav class="v-navigation">
+  <nav class="v-navigation mmd--box mmd--with-gutter">
 
     <div
         class="v-navigation__left"
-    ><span class="mmd-logo">Ad<span class="mmd-logo__point">.</span>Face</span></div>
+    >
+      <router-link
+          to="/"
+          class="mmd-logo mmd-font-xxl"
+      >ADface.me</router-link>
+    </div>
 
     <div
         class="v-navigation__right"
     ><div class="v-navigation__about"
           @click="onAboutClick"
           :class="{'is-open':aboutIsOpen}"
-    >about <span class="v-navigation__about__ui">+</span></div></div>
+    >about the project<span class="v-navigation__about__ui">+</span></div></div>
   </nav>
 </template>
 
@@ -51,12 +56,10 @@ export default defineComponent({
   width: 100%;
   height: var(--nav-height);
   box-sizing: border-box;
-  padding: var(--unit);
-  background-color: var(--site-color--background);
+  background-color: var(--site-color--main_light);
   z-index: 100000;
-  top: 0;
+  bottom: 0;
   left: 0;
-  box-shadow: var(--box-shadow);
   display: flex;
   justify-content: space-between;
 }

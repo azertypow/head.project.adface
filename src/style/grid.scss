@@ -1,0 +1,36 @@
+.mmd-box {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mmd--with-gutter {
+  box-sizing: border-box;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.mmd--with-padding {
+  box-sizing: border-box;
+  padding: var(--gutter);
+}
+
+.mmd--no-margin {
+  margin: 0;
+}
+
+.mmd--child-rm-margin {
+  *:first-child {
+    margin-top: 0;
+  }
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.mmd-with-scroll {
+  overflow: scroll;
+  overscroll-behavior: none;
+  scroll-behavior: smooth;
+}

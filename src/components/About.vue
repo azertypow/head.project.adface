@@ -1,10 +1,11 @@
 <template>
-  <div class="v-about mmd--with-gutter">
+  <div class="v-about mmd--with-padding mmd--child-rm-margin mmd-with-scroll">
     <div class="v-about__content">
-      <h1>about descriptio</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore doloribus enim excepturi facere harum impedit ipsam magni molestiae, molestias mollitia nam neque obcaecati quas quia quos sunt temporibus, tenetur ut.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid deserunt dolores dolorum ducimus inventore maxime modi pariatur placeat reiciendis. Ab beatae fugit harum odit quisquam sed soluta. Amet officia, optio.</p>
-      <h2>Amet officia, optio.</h2>
+      <p>This interactive experience was created by students of Raghid Jomaa, Emma Parente, Marta Revuelta, Alexia Mathieu, Laurent (Nom) as part of their Master Media Design.</p>
+      <p>The experience was commissioned by the Swiss Digital Initiative and launched publicly at the World Economic Forum Annual Meeting in January 2022. Art can be a potent tool to build awareness about ethical questions raised by digital technologies. The often abstract and complex subject matter can be made more tangible and lead to concrete experiences that make people think about the digital services surrounding us. With this project, SDI hopes to contribute to a broad and sustained debate about digital trust.</p>
+      <p>The Swiss Digital Initiative (SDI) is an independent, non-profit foundation headquartered in Geneva and set up in 2020 by the association digitalswitzerland and under the patronage of Federal Councillor Ueli Maurer. The SDI pursues concrete projects with the aim of safeguarding ethical standards and promoting responsible behaviour in the digital world.</p>
+      <p>The SDI’s location in Geneva as well as the collaboration with the leading art school in Geneva is no coincidence. The SDI is very much Swiss at heart and embodies many of the Swiss qualities of security, reliability, and trust. At the same time, we recognize that the issue of digital ethics and trust is a global one. With this in mind, we believe our location in international Geneva puts us in a great starting position to combine Swiss values and perspectives with a global debate and international impact.</p>
+      <p>More information can be found under: <a href="https://www.swiss-digital-initiative.org" target="_blank" >swiss-digital-initiative.org</a></p>
     </div>
   </div>
 </template>
@@ -23,19 +24,13 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-about {
   position: fixed;
-  top: var(--nav-height);
+  bottom: var(--nav-height);
   left: 0;
   width: 100%;
   height: calc(100% - var(--nav-height) );
   z-index: 10000;
-  overflow: scroll;
-  overscroll-behavior: none;
-  scroll-behavior: smooth;
-  background: var(--site-color--main);
-  color: var(--site-color--main_light);
+  background: var(--site-color--background);
 }
 
-.v-about__content{
-  min-height: 125vh;
-}
+.v-about__content{}
 </style>

@@ -1,8 +1,6 @@
 <template>
   <div class="v-app">
 
-    <navigation/>
-
     <transition name="view" mode="out-in"  >
       <about v-if="aboutIsOpen"/>
     </transition>
@@ -13,6 +11,7 @@
       </transition>
     </router-view>
 
+    <navigation/>
   </div>
 </template>
 
@@ -45,8 +44,13 @@ export default {
 <style lang="scss">
 
 .v-app {
-  padding-top: var(--nav-height);
+  box-sizing: border-box;
+  padding-bottom: var(--nav-height);
   animation: intro;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 // page transition

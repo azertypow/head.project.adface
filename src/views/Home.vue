@@ -1,36 +1,47 @@
 <template>
   <div class="v-home">
 
-    <intro/>
+    <div class="v-home__bg">
+      <div class="v-home__bg__top-left"></div>
+      <div class="v-home__bg__top-right"></div>
+      <div class="v-home__bg__bottom-right"></div>
+    </div>
 
-    <description/>
+
+    <div class="v-home__main">
+      <div class="v-home__text mmd--with-padding mmd--child-rm-margin" >
+        <p>An experience about micro-targeting and ad-tech. how algorithnnnnn your personal
+          <br>Not data is not collected and you </p>
+      </div>
+
+      <div
+          class="v-home__check-box mmd--with-padding mmd--child-rm-margin mmd-box"
+      >
+        <div
+            class="v-home__check-box__ui"
+            :class="{
+              'is-validate': termValidate
+            }"
+            @click="validateTerm"
+        ></div>
+        <p class="mmd--no-margin" ><router-link to="/term" >I agree to the terms and conditions</router-link></p>
+      </div>
+    </div>
+
 
     <div class="v-home__video">
-      <video
-          autoplay
-          muted
-          playsinline
-          class="v-home__video-render"
-          @loadedmetadata="onPlay"
-          ref="videoElement"
-      ></video>
+<!--      <video-->
+<!--          autoplay-->
+<!--          muted-->
+<!--          playsinline-->
+<!--          class="v-home__video-render"-->
+<!--          @loadedmetadata="onPlay"-->
+<!--          ref="videoElement"-->
+<!--      ></video>-->
       <canvas
           class="v-home__overlay"
           ref="canvasOverlay"
       />
-
-      <router-link
-          to="/app"
-          style="
-          display: block;
-          position: absolute;
-          bottom: 50px;
-          right: 50px;
-          "
-      >
-        go to result page (remove this button in production)
-      </router-link>
-
     </div>
 
   </div>
@@ -48,14 +59,17 @@ import {
   resizeResults,
   TinyFaceDetectorOptions
 } from "face-api.js"
-import Intro from "@/components/Intro.vue"
-import Description from "@/components/description.vue" // @ is an alias to /src
 
 export default defineComponent({
   name: 'Home',
+
   components: {
-    Description,
-    Intro
+  },
+
+  data(){
+    return {
+      termValidate: false,
+    }
   },
 
   async mounted() {
@@ -63,25 +77,27 @@ export default defineComponent({
       video: {}
     })
 
-    const videoElement = document.querySelector('.v-home__video-render') as HTMLVideoElement
+    if(this.$refs.videoElement instanceof HTMLVideoElement) this.$refs.videoElement.srcObject = stream
 
-    videoElement.srcObject = stream
-
-    nets.tinyFaceDetector.load("https://azertypow.github.io/head.project.adface/").then(() => {
-      console.log("loaded")
-    }).catch(reason => {
-      console.log(reason)
-    })
-
-    nets.faceLandmark68TinyNet.load("https://azertypow.github.io/head.project.adface/").then(() => {
-      console.log("loaded")
-    }).catch(reason => {
-      console.log(reason)
-    })
-
+    this.loadModels()
   },
 
   methods: {
+
+    loadModels() {
+      nets.tinyFaceDetector.load("https://azertypow.github.io/head.project.adface/").then(() => {
+        console.info("tinyFaceDetector loaded")
+      }).catch(reason => {
+        console.log(reason)
+      })
+
+      nets.faceLandmark68TinyNet.load("https://azertypow.github.io/head.project.adface/").then(() => {
+        console.info("faceLandmark68TinyNet loaded")
+      }).catch(reason => {
+        console.log(reason)
+      })
+    },
+
     async onPlay(): Promise<any> {
 
       const videoEl = this.$refs.videoElement as HTMLVideoElement
@@ -102,11 +118,7 @@ export default defineComponent({
         scoreThreshold: .5,
       })
 
-      // const ts = Date.now()
-
       const result = await detectAllFaces(videoEl, options).withFaceLandmarks(true)
-
-      // updateTimeStats(Date.now() - ts)
 
       if (result) {
         const dims = matchDimensions(canvas, videoEl, true)
@@ -127,6 +139,10 @@ export default defineComponent({
       return !!nets.faceLandmark68TinyNet.params
     },
 
+    validateTerm() {
+      this.termValidate = !this.termValidate
+    },
+
   },
 
 });
@@ -134,10 +150,96 @@ export default defineComponent({
 
 <style lang="scss">
 
-.v-home__video {
-  width: 100%;
-  height: calc( 100vh - var(--nav-height));
+.v-home {
   position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.v-home__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.v-home__bg__top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--site-color--background--dark);
+  width: calc(100% / 7 * 5);
+  height: calc(100% / 7 * 1);
+  z-index: 3;
+}
+.v-home__bg__top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--site-color--secondary);
+  width: calc(100% / 7 * 3);
+  height: calc(100% / 7 * 2);
+  z-index: 2;
+}
+.v-home__bg__bottom-right {
+  position: absolute;
+  bottom: calc(100% / 7 * 1);
+  right: var(--gutter);
+  background: var(--site-color--main);
+  width:  calc(100% / 7 * 1);
+  height: calc(100% / 7 * 3);
+  z-index: 1;
+}
+
+.v-home__main {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% / 7 * 1 + var(--text-line-height));
+  left: var(--text-line-height);
+  width: calc( 100% - var(--text-line-height) * 2 - var(--video-size) - (100% / 7 * .5 ) );
+}
+
+.v-home__text {
+  overflow: hidden;
+  background: var(--site-color--secondary);
+  padding: var(--unit);
+  position: relative;
+  width: 100%;
+}
+
+.v-home__check-box {
+  background: var(--site-color--main_light);
+  position: relative;
+  width: 100%;
+  margin-top: var(--text-line-height);
+}
+
+.v-home__check-box__ui {
+  cursor: pointer;
+  height: var(--text-line-height);
+  width:  var(--text-line-height);
+  background: var(--site-color--main_light);
+  margin-right: var(--gutter);
+  box-sizing: border-box;
+  border: solid var(--border-width) var(--site-color--main_dark);
+  flex-shrink: 0;
+
+  &.is-validate {
+    background: var(--site-color--secondary);
+  }
+}
+
+.v-home__video {
+  width: var(--video-size);
+  height: var(--video-size);
+  position: absolute;
+  background: black;
+  top: calc(100% / 7 * 1 + var(--text-line-height));
+  right: calc(100% / 7 * .5 );
+  z-index: 10;
 }
 
 .v-home__overlay,
