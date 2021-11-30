@@ -29,15 +29,20 @@
     </div>
 
 
-    <div class="v-home__video">
-<!--      <video-->
-<!--          autoplay-->
-<!--          muted-->
-<!--          playsinline-->
-<!--          class="v-home__video-render"-->
-<!--          @loadedmetadata="onPlay"-->
-<!--          ref="videoElement"-->
-<!--      ></video>-->
+    <div
+        class="v-home__video"
+        :class="{
+          'is-active': showVideo
+        }"
+    >
+      <video
+          autoplay
+          muted
+          playsinline
+          class="v-home__video-render"
+          @loadedmetadata="onPlay"
+          ref="videoElement"
+      ></video>
       <canvas
           class="v-home__overlay"
           ref="canvasOverlay"
@@ -69,6 +74,7 @@ export default defineComponent({
   data(){
     return {
       termValidate: false,
+      showVideo: false,
     }
   },
 
@@ -114,7 +120,7 @@ export default defineComponent({
 
 
       const options = new TinyFaceDetectorOptions({
-        inputSize: 320,
+        inputSize: 160,
         scoreThreshold: .5,
       })
 
@@ -141,6 +147,7 @@ export default defineComponent({
 
     validateTerm() {
       this.termValidate = !this.termValidate
+      this.showVideo = true
     },
 
   },
@@ -251,6 +258,13 @@ export default defineComponent({
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+
+  .is-active & {
+    opacity: 1;
+  }
 }
 
 </style>
