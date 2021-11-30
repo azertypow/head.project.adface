@@ -130,7 +130,11 @@ export default defineComponent({
         const dims = matchDimensions(canvas, videoEl, true)
         const resultsResized = resizeResults(result, dims)
 
-        draw.drawDetections(canvas, resultsResized)
+        for (const resultResized of resultsResized) {
+          const box = new draw.DrawBox(resultResized.alignedRect.box)
+          box.draw(canvas)
+        }
+
         draw.drawFaceLandmarks(canvas, resultsResized)
       }
 
