@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://azertypow.github.io/head.project.adface/precache-manifest.95f9db90583842cbbd9c64fc82e18906.js"
+  "https://azertypow.github.io/head.project.adface/precache-manifest.94ce3783e04e95060d78109cb9604766.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "adface"});

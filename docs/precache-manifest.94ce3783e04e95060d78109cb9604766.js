@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fe47393669047f522ba0",
+    "revision": "4659d39ea628f8c271c1",
     "url": "https://azertypow.github.io/head.project.adface/css/app.bf550b15.css"
   },
   {
@@ -12,20 +12,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/css/chunk-1d69a59d.0e433876.css"
   },
   {
-    "revision": "9917c862ebf418dfe8bc",
-    "url": "https://azertypow.github.io/head.project.adface/css/chunk-971ddbcc.47638bc1.css"
+    "revision": "5030e377c360af4c8d71",
+    "url": "https://azertypow.github.io/head.project.adface/css/chunk-62bcbec8.2f0f55ec.css"
+  },
+  {
+    "revision": "47047fee26557b55d985952bdfc6cba1",
+    "url": "https://azertypow.github.io/head.project.adface/face_landmark_68_tiny_model-shard1"
+  },
+  {
+    "revision": "29ea9c5c0e59a3069f8999b4ba1bd173",
+    "url": "https://azertypow.github.io/head.project.adface/face_landmark_68_tiny_model-weights_manifest.json"
   },
   {
     "revision": "468602ee6242309afdf07fb84d896de8",
     "url": "https://azertypow.github.io/head.project.adface/img/img.png"
   },
   {
-    "revision": "e1a2b9355f3c6a307c6ebd2a48bffc88",
+    "revision": "0a5d5c181f5a0656df5af480311b14b3",
     "url": "https://azertypow.github.io/head.project.adface/index.html"
   },
   {
-    "revision": "fe47393669047f522ba0",
-    "url": "https://azertypow.github.io/head.project.adface/js/app.1e767631.js"
+    "revision": "4659d39ea628f8c271c1",
+    "url": "https://azertypow.github.io/head.project.adface/js/app.dc604bec.js"
   },
   {
     "revision": "62877b1798ecf70c21f5",
@@ -36,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/js/chunk-1d69a59d.fb33c7dd.js"
   },
   {
-    "revision": "9917c862ebf418dfe8bc",
-    "url": "https://azertypow.github.io/head.project.adface/js/chunk-971ddbcc.c55b3afc.js"
+    "revision": "5030e377c360af4c8d71",
+    "url": "https://azertypow.github.io/head.project.adface/js/chunk-62bcbec8.27acab04.js"
   },
   {
     "revision": "2de604f37d983e095bd3",
