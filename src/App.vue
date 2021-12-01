@@ -11,7 +11,9 @@
       </transition>
     </router-view>
 
-    <navigation/>
+    <navigation
+        v-if="this.$route.path !== '/profile'"
+    />
   </div>
 </template>
 

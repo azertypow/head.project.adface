@@ -13,7 +13,7 @@
         class="v-home__main"
         v-if="!showVideo"
     >
-      <div class="v-home__text mmd--with-padding mmd--child-rm-margin" >
+      <div class="v-home__text mmd--with-padding mmd--child-rm-margin">
         <p>An experience about micro-targeting and ad-tech. how algorithnnnnn your personal
           <br>Not data is not collected and you </p>
       </div>
@@ -28,7 +28,9 @@
             }"
             @click="validateTerm"
         ></div>
-        <p class="mmd--no-margin" ><router-link to="/term" >I agree to the terms and conditions</router-link></p>
+        <p class="mmd--no-margin">
+          <router-link to="/term">I agree to the terms and conditions</router-link>
+        </p>
       </div>
     </div>
 
@@ -57,7 +59,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {defineComponent} from 'vue';
 import {
   detectAllFaces,
   detectSingleFace,
@@ -70,6 +72,8 @@ import {
 } from "face-api.js"
 import {IImageAnalysisResponse, params} from "@/main"
 import ResultView from "@/components/ResultView.vue"
+import {useStore} from "vuex"
+import {MutationTypes} from "@/store"
 
 export default defineComponent({
   name: 'Home',
@@ -78,8 +82,9 @@ export default defineComponent({
     ResultView
   },
 
-  data(){
+  data() {
     return {
+      store: useStore(),
       termValidate: false,
       showVideo: false,
       imageProcessAnalysis: null as null | IImageAnalysisResponse,
@@ -87,7 +92,9 @@ export default defineComponent({
   },
 
   computed: {
-    showResult(): boolean {return this.imageProcessAnalysis !== null}
+    showResult(): boolean {
+      return this.store.state.imageAnalysisResponse !== null
+    }
   },
 
   async mounted() {
@@ -95,7 +102,7 @@ export default defineComponent({
       video: {}
     })
 
-    if(this.$refs.videoElement instanceof HTMLVideoElement) this.$refs.videoElement.srcObject = stream
+    if (this.$refs.videoElement instanceof HTMLVideoElement) this.$refs.videoElement.srcObject = stream
 
     this.loadModels()
   },
@@ -121,7 +128,7 @@ export default defineComponent({
       const videoEl = this.$refs.videoElement as HTMLVideoElement
       const canvas = this.$refs.canvasOverlay as HTMLCanvasElement
 
-      if( videoEl.paused
+      if (videoEl.paused
           || videoEl.ended
           || !this.isFaceDetectionModelLoaded()
           || !this.isFaceLandmark68TinyNetModelLoaded()
@@ -163,14 +170,17 @@ export default defineComponent({
     async validateTerm() {
       this.termValidate = !this.termValidate
       this.showVideo = true
-      this.imageProcessAnalysis = await this.startImageProcess()
+      this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, await this.startImageProcess())
     },
 
     async startImageProcess(): Promise<IImageAnalysisResponse> {
       return new Promise(async (resolve, reject) => {
         const snapWebcam = this.snapWebcam({})
 
-        if(snapWebcam) resolve ( await this.sendImageData(snapWebcam) )
+        if (snapWebcam) {
+          console.log( snapWebcam )
+          resolve(await this.sendImageData(snapWebcam))
+        }
         else reject("snapWebcam error")
       })
     },
@@ -183,17 +193,28 @@ export default defineComponent({
                  jpeg_quality = 90,
                }) {
 
-      if(this.$refs.canvasOverlay instanceof HTMLCanvasElement)
-        return this.$refs.canvasOverlay.toDataURL(`image/${image_format}`, jpeg_quality / 100 )
+      // if(this.$refs.canvasOverlay instanceof HTMLCanvasElement) {
+      //   return this.$refs.canvasOverlay.toDataURL(`image/${image_format}`, jpeg_quality / 100 )
+      // }
+
+      if(this.$refs.videoElement instanceof HTMLVideoElement) {
+        const drawCanvas = document.createElement("canvas")
+        const drawCanvasContext = drawCanvas.getContext("2d")
+        drawCanvas.width = this.$refs.videoElement.videoWidth
+        drawCanvas.height = this.$refs.videoElement.videoHeight
+
+        drawCanvasContext?.drawImage(this.$refs.videoElement, 0, 0, this.$refs.videoElement.videoWidth, this.$refs.videoElement.videoHeight)
+        return drawCanvas.toDataURL(`image/${image_format}`, jpeg_quality / 100 )
+      }
     },
 
 
     async sendImageData(data_uri: string): Promise<IImageAnalysisResponse> {
-      return new Promise((resolve, reject) => {
+      return new Promise(async (resolve, reject) => {
 
         const options = {
           method: 'POST',
-          // crossDomain: true,
+          crossDomain: true,
           body: JSON.stringify({
             img: [data_uri]
           }),
@@ -208,12 +229,17 @@ export default defineComponent({
             emotion: "angry",
             gender: "Woman",
           })
-        }, 5000)
+        }, 10000)
 
-        // const results = fetch(
-        //     params.baseUrl,
+        // const response = await fetch(
+        //     `${params.baseUrl}/analyze`,
         //     options,
         // )
+        //
+        // const result = await response.json()
+        //
+        // console.log(result)
+
       })
     }
   },
@@ -248,6 +274,7 @@ export default defineComponent({
   height: calc(100% / 7 * 1);
   z-index: 3;
 }
+
 .v-home__bg__top-right {
   position: absolute;
   top: 0;
@@ -257,12 +284,13 @@ export default defineComponent({
   height: calc(100% / 7 * 2);
   z-index: 2;
 }
+
 .v-home__bg__bottom-right {
   position: absolute;
   bottom: calc(100% / 7 * 1);
   right: var(--gutter);
   background: var(--site-color--main);
-  width:  calc(100% / 7 * 1);
+  width: calc(100% / 7 * 1);
   height: calc(100% / 7 * 3);
   z-index: 1;
 }
@@ -272,7 +300,7 @@ export default defineComponent({
   z-index: 10;
   top: calc(100% / 7 * 1 + var(--text-line-height));
   left: var(--text-line-height);
-  width: calc( 100% - var(--text-line-height) * 2 - var(--video-size) - (100% / 7 * .5 ) );
+  width: calc(100% - var(--text-line-height) * 2 - var(--video-size) - (100% / 7 * .5));
 }
 
 .v-home__text {
@@ -293,7 +321,7 @@ export default defineComponent({
 .v-home__check-box__ui {
   cursor: pointer;
   height: var(--text-line-height);
-  width:  var(--text-line-height);
+  width: var(--text-line-height);
   background: var(--site-color--main_light);
   margin-right: var(--gutter);
   box-sizing: border-box;
@@ -311,7 +339,7 @@ export default defineComponent({
   position: absolute;
   background: black;
   top: calc(100% / 7 * 1 + var(--text-line-height));
-  right: calc(100% / 7 * .5 );
+  right: calc(100% / 7 * .5);
   z-index: 10;
 }
 

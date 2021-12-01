@@ -7,7 +7,7 @@ import router from './router'
 import store from './store'
 
 export const params = {
-  baseUrl: ""
+  baseUrl: "http://192.168.1.20:5000"
 }
 
 export enum URL_PARAMS_NAMES {

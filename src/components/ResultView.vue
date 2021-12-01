@@ -1,11 +1,24 @@
 <template>
   <div
-      ref="imagesContainer"
       class="v-result-view"
   >
+    <div
+        class="v-result-view__container"
+        ref="imagesContainer"
+    ></div>
 
-    <div class="imagesContainer__share">
-      <button>share results</button>
+    <div
+        class="v-result-view__share"
+        v-if="status === 'ended' || status === 'shareClicked'"
+        @click="shareClicked"
+    >
+      <img
+          alt="ui share icon"
+          class="v-result-view__share-icon"
+          src="../assets/share_profile.svg">
+      <div
+          v-if="status === 'shareClicked'"
+      >text copied to clipboard</div>
     </div>
   </div>
 </template>
@@ -13,6 +26,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import {randomIntFromInterval} from "@/main"
+import {useStore} from "vuex"
 
 export default defineComponent({
   name: 'ResultView',
@@ -21,7 +35,8 @@ export default defineComponent({
 
   data() {
     return {
-      status: "started" as "started" | "ended",
+      store: useStore(),
+      status: "started" as "started" | "ended" | "shareClicked",
       listOfImages: [
         "https://azertypow.github.io/head.project.adface/img/img.png",
         "https://azertypow.github.io/head.project.adface/img/img.png",
@@ -82,6 +97,12 @@ export default defineComponent({
 
         else this.status = "ended"
       }
+    },
+
+    shareClicked() {
+      navigator.clipboard.writeText("https://azertypow.github.io/head.project.adface/#/profile").then(() => {
+        this.status = 'shareClicked'
+      })
     }
   },
 
@@ -89,7 +110,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.v-result-view {
+.v-result-view__container {
   position: fixed;
   pointer-events: none;
   user-select: none;
@@ -104,5 +125,21 @@ export default defineComponent({
     display: block;
     transform: translate(-50%, -50%);
   }
+}
+
+.v-result-view__share {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100000000;
+  cursor: pointer;
+  text-align: center;
+}
+
+.v-result-view__share-icon {
+  display: block;
+  width: 200px;
+  height: auto;
 }
 </style>

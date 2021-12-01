@@ -7,12 +7,12 @@
       You were targeted with these ads because you are a
     </main>
 
-    <div
-        class="v-application-rendering__links mmd-box"
-    >
-      <router-link to="/">try the experience</router-link>
-      <button>share result</button>
-    </div>
+<!--    <div-->
+<!--        class="v-application-rendering__links mmd-box"-->
+<!--    >-->
+<!--      <router-link to="/">try the experience</router-link>-->
+<!--      <button>share result</button>-->
+<!--    </div>-->
   </div>
 </template>
 
