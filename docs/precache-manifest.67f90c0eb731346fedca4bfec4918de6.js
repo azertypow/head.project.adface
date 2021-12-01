@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fbc33d1c373919b6a038",
+    "revision": "4f798e61b4c97b1af079",
     "url": "https://azertypow.github.io/head.project.adface/css/app.bf550b15.css"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/css/chunk-024dba61.9137ba64.css"
   },
   {
-    "revision": "8598e4ca72b19ad0901e",
-    "url": "https://azertypow.github.io/head.project.adface/css/chunk-1d69a59d.0e433876.css"
+    "revision": "0612a9607ba6456f5527",
+    "url": "https://azertypow.github.io/head.project.adface/css/chunk-7d6c0428.0e433876.css"
   },
   {
     "revision": "54899d6d06d90cac756f",
@@ -28,20 +28,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/img/img.png"
   },
   {
-    "revision": "f926f75f05927fd2743ea516ba5b5ca4",
+    "revision": "2619a4a5005c1e7888077d0bd4fedbc9",
     "url": "https://azertypow.github.io/head.project.adface/index.html"
   },
   {
-    "revision": "fbc33d1c373919b6a038",
-    "url": "https://azertypow.github.io/head.project.adface/js/app.17f97728.js"
+    "revision": "4f798e61b4c97b1af079",
+    "url": "https://azertypow.github.io/head.project.adface/js/app.ea84f71b.js"
   },
   {
     "revision": "62877b1798ecf70c21f5",
     "url": "https://azertypow.github.io/head.project.adface/js/chunk-024dba61.017495b0.js"
   },
   {
-    "revision": "8598e4ca72b19ad0901e",
-    "url": "https://azertypow.github.io/head.project.adface/js/chunk-1d69a59d.fb33c7dd.js"
+    "revision": "0612a9607ba6456f5527",
+    "url": "https://azertypow.github.io/head.project.adface/js/chunk-7d6c0428.ed35da4b.js"
   },
   {
     "revision": "54899d6d06d90cac756f",
