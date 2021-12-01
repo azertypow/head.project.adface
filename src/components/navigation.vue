@@ -12,10 +12,15 @@
 
     <div
         class="v-navigation__right"
-    ><div class="v-navigation__about"
+    >
+
+      <img src="../assets/Logo_SDI_pos_RGB.png" alt="SDI logo" class="v-navigation__logo">
+
+      <div class="v-navigation__about"
           @click="onAboutClick"
           :class="{'is-open':aboutIsOpen}"
-    >about the project<span class="v-navigation__about__ui">+</span></div></div>
+      >about the project<span class="v-navigation__about__ui">+</span></div>
+    </div>
   </nav>
 </template>
 
@@ -62,6 +67,22 @@ export default defineComponent({
   left: 0;
   display: flex;
   justify-content: space-between;
+}
+
+.v-navigation__right {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
+  justify-content: space-between;
+}
+
+.v-navigation__logo {
+  height: 50%;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  object-position: top right;
 }
 
 .v-navigation__about {
