@@ -7,8 +7,12 @@
       <div class="v-home__bg__bottom-right"></div>
     </div>
 
+    <result-view v-if="showResult"></result-view>
 
-    <div class="v-home__main">
+    <div
+        class="v-home__main"
+        v-if="!showVideo"
+    >
       <div class="v-home__text mmd--with-padding mmd--child-rm-margin" >
         <p>An experience about micro-targeting and ad-tech. how algorithnnnnn your personal
           <br>Not data is not collected and you </p>
@@ -32,7 +36,7 @@
     <div
         class="v-home__video"
         :class="{
-          'is-active': showVideo
+          'is-active': (showVideo && !showResult)
         }"
     >
       <video
@@ -64,18 +68,26 @@ import {
   resizeResults,
   TinyFaceDetectorOptions
 } from "face-api.js"
+import {IImageAnalysisResponse, params} from "@/main"
+import ResultView from "@/components/ResultView.vue"
 
 export default defineComponent({
   name: 'Home',
 
   components: {
+    ResultView
   },
 
   data(){
     return {
       termValidate: false,
       showVideo: false,
+      imageProcessAnalysis: null as null | IImageAnalysisResponse,
     }
+  },
+
+  computed: {
+    showResult(): boolean {return this.imageProcessAnalysis !== null}
   },
 
   async mounted() {
@@ -114,7 +126,6 @@ export default defineComponent({
           || !this.isFaceDetectionModelLoaded()
           || !this.isFaceLandmark68TinyNetModelLoaded()
       ) {
-        console.log("pas loaded")
         return setTimeout(() => this.onPlay())
       }
 
@@ -149,11 +160,62 @@ export default defineComponent({
       return !!nets.faceLandmark68TinyNet.params
     },
 
-    validateTerm() {
+    async validateTerm() {
       this.termValidate = !this.termValidate
       this.showVideo = true
+      this.imageProcessAnalysis = await this.startImageProcess()
     },
 
+    async startImageProcess(): Promise<IImageAnalysisResponse> {
+      return new Promise(async (resolve, reject) => {
+        const snapWebcam = this.snapWebcam({})
+
+        if(snapWebcam) resolve ( await this.sendImageData(snapWebcam) )
+        else reject("snapWebcam error")
+      })
+    },
+
+
+    snapWebcam({
+                 width = 320,
+                 height = 240,
+                 image_format = 'jpeg',
+                 jpeg_quality = 90,
+               }) {
+
+      if(this.$refs.canvasOverlay instanceof HTMLCanvasElement)
+        return this.$refs.canvasOverlay.toDataURL(`image/${image_format}`, jpeg_quality / 100 )
+    },
+
+
+    async sendImageData(data_uri: string): Promise<IImageAnalysisResponse> {
+      return new Promise((resolve, reject) => {
+
+        const options = {
+          method: 'POST',
+          // crossDomain: true,
+          body: JSON.stringify({
+            img: [data_uri]
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+
+        window.setTimeout(() => {
+          resolve({
+            age: "0-10",
+            emotion: "angry",
+            gender: "Woman",
+          })
+        }, 5000)
+
+        // const results = fetch(
+        //     params.baseUrl,
+        //     options,
+        // )
+      })
+    }
   },
 
 });
@@ -263,12 +325,16 @@ export default defineComponent({
   object-fit: cover;
   display: block;
   pointer-events: none;
-  transition: opacity 1s ease-in-out;
   opacity: 0;
 
   .is-active & {
+    transition: opacity 1s ease-in-out;
     opacity: 1;
   }
+}
+
+.v-home__video-render {
+  filter: grayscale(1);
 }
 
 </style>
