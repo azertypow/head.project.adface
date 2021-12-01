@@ -7,6 +7,9 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi architecto deserunt dolore doloribus eius excepturi hic labore molestias nam, natus porro possimus, recusandae reiciendis unde voluptatem voluptates. Ipsa, sint.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores error excepturi iure magnam optio quasi. Ab aliquam autem commodi consequatur dolorem doloribus eaque nulla placeat, unde ut veniam voluptas.</p>
       </div>
+    <p>
+      <router-link to="/">back to home</router-link>
+    </p>
   </div>
 </template>
 
@@ -22,6 +25,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-term {
-  height: calc(100% - var(--nav-height) );
+  height: 100%;
 }
 </style>
