@@ -93,9 +93,13 @@ export default defineComponent({
 
         if (indexOfListOfImages < listOfImages.length) window.setTimeout(() => {
           this.placeImageInView(indexOfListOfImages, this.listOfImages)
-        }, 50)
+        }, 500)
 
-        else this.status = "ended"
+        else {
+          window.setTimeout(() => {
+            this.status = "ended"
+          }, 2000)
+        }
       }
     },
 
@@ -141,5 +145,6 @@ export default defineComponent({
   display: block;
   width: 200px;
   height: auto;
+  margin: auto;
 }
 </style>

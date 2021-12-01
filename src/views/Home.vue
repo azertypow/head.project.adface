@@ -229,7 +229,7 @@ export default defineComponent({
             emotion: "angry",
             gender: "Woman",
           })
-        }, 10000)
+        }, 15000)
 
         // const response = await fetch(
         //     `${params.baseUrl}/analyze`,
