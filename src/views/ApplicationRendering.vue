@@ -40,6 +40,15 @@ export default defineComponent({
   },
 
   mounted() {
+
+    const ogTitle       = document.querySelector('[property="og:title"]')
+    const ogDescription = document.querySelector('[property="og:description"]')
+    const ogImage       = document.querySelector('[property="og:image"]')
+
+    ogTitle?.setAttribute('content', 'custom title')
+    ogDescription?.setAttribute('content', 'custom description')
+    ogImage?.setAttribute('content', 'https://azertypow.github.io/head.project.adface/img/img.png')
+
     if(
         this.age !== null
         && this.emotion !== null
