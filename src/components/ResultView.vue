@@ -1,6 +1,6 @@
 <template>
   <div class="v-result-view">
-    <img src="/img/img.png" />
+    <img src="https://azertypow.github.io/head.project.adface/img/img.png" />
   </div>
 </template>
 
