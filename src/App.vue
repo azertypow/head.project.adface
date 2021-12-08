@@ -1,5 +1,9 @@
 <template>
-  <div class="v-app">
+  <div
+      :class="{
+      'small-nav': aboutIsOpen || this.$route.path === '/term'
+      }"
+      class="v-app">
 
     <transition name="view" mode="out-in"  >
       <about v-if="aboutIsOpen"/>
@@ -60,14 +64,14 @@ export default {
 .view-enter-active {
   position: relative;
   opacity: 0;
-  transform: translate3d(0, 100px, 0);
-  transition: opacity 1s ease-in-out, transform 1s ease;
+  transform: translate3d(0, 50px, 0);
+  //transition: opacity .5s ease-in-out, transform .75s ease-in-out;
 }
 
 .view-enter,
 .view-leave-to {
   opacity: 0;
-  transform: translate3d(0, -100px, 0);
+  transform: translate3d(0, -50px, 0);
 }
 
 .view-enter-to,

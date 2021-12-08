@@ -24,6 +24,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-about {
   position: fixed;
+  padding-left: var(--left-padding);
   bottom: var(--nav-height);
   left: 0;
   width: 100%;
@@ -32,5 +33,7 @@ export default defineComponent({
   background: var(--site-color--background);
 }
 
-.v-about__content{}
+.v-about__content{
+  max-width: 37em;
+}
 </style>

@@ -1,6 +1,6 @@
 .mmd-font-xxl {
-  font-size:      calc(var(--text-font-size)   * 5);
-  line-height:    calc(var(--text-line-height) * 4);
+  font-size:      calc(var(--text-font-size)   * 12);
+  line-height:    var(--font-xxl__line-height);
   font-weight: 500;
   letter-spacing: -.025em;
 }
@@ -48,4 +48,10 @@ a {
   color: inherit;
   text-decoration: none;
   border-bottom: solid var(--border-width);
+}
+
+.font--small {
+  font-size:    calc( var(--text-font-size)   / 1.5 );
+  line-height:  calc( var(--text-line-height) / 1.5 );
+  font-weight: 500;
 }

@@ -19,9 +19,12 @@
 
   --site-color--color:      var(--site-color--main_dark);
 
+  --font-xxl__line-height: calc(var(--text-line-height) * 8);
 
   // size
-  --nav-height: calc( var(--text-line-height) * 4 );
+  --left-padding: 125px;
+
+  --nav-height:         6rem;
 
   --box-shadow: var(--site-color--main) 0 10px 30px -15px;
 
@@ -47,6 +50,7 @@ html {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  font-size: var(--unit);
 }
 
 body {
@@ -79,9 +83,11 @@ body {
   overflow: hidden;
 }
 
+.mmd-button,
 button {
   all: unset;
   padding: calc( var(--unit) );
+  font-size: var( --text-font-size );
   line-height: var(--text-line-height);
   display: block;
   background: var(--site-color--color);
@@ -91,8 +97,14 @@ button {
   user-select: none;
   cursor: pointer;
   border-radius: var(--border-radius);
+
+  &.mmd-button--small {
+    padding: calc( var(--unit) / 2 );
+    @extend .font--small;
+  }
 }
 
 .mmd-logo {
   text-decoration: none;
+  border: none;
 }

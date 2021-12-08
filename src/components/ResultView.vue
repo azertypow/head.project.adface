@@ -10,12 +10,35 @@
     <div
         class="v-result-view__share"
         v-if="status === 'ended' || status === 'shareClicked'"
-        @click="shareClicked"
     >
       <img
           alt="ui share icon"
           class="v-result-view__share-icon"
           src="../assets/share_profile.svg">
+
+      <button
+          class="mmd-button--small"
+          @click="shareClicked"
+      >copy link to clipboard</button>
+
+      <a
+          class="mmd-button mmd-button--small"
+          target="_blank"
+          :href="getProfileUrl('mail')"
+      >share to mail</a>
+
+      <a
+          class="mmd-button mmd-button--small"
+          target="_blank"
+          :href="getProfileUrl('facebook')"
+      >share to facebook</a>
+
+      <a
+          class="mmd-button mmd-button--small"
+          target="_blank"
+          :href="getProfileUrl('twitter')"
+      >share to twitter</a>
+
       <div
           v-if="status === 'shareClicked'"
       >text copied to clipboard</div>
@@ -87,6 +110,27 @@ export default defineComponent({
   },
 
   methods: {
+
+    getProfileUrl(get: null | "facebook" | "twitter" | 'mail'): string {
+
+      const profileUrl = 'https://azertypow.github.io/head.project.adface/#/profile'
+      const subject = "AddFace Application"
+      const text = 'AddFace prototype text description'
+      const hashtags = 'webapp, AI'
+
+      if(get === "mail")
+        return `mailto:?subject=${subject}&body=${text}`
+
+      if (get === "twitter")
+        return `https://twitter.com/intent/tweet?text=${text}&url=${profileUrl}&hashtags=${hashtags}`
+
+      if (get === "facebook")
+        return `https://www.facebook.com/sharer/sharer.php?u=${profileUrl}`
+
+      return encodeURI(profileUrl)
+    },
+
+
     placeImageInView(indexOfListOfImages: number, listOfImages: string[]) {
 
       const imagesContainer = this.$refs.imagesContainer
@@ -103,7 +147,7 @@ export default defineComponent({
 
         if (indexOfListOfImages < listOfImages.length) window.setTimeout(() => {
           this.placeImageInView(indexOfListOfImages, this.listOfImages)
-        }, 500)
+        }, 50)
 
         else {
           window.setTimeout(() => {
@@ -114,7 +158,7 @@ export default defineComponent({
     },
 
     shareClicked() {
-      navigator.clipboard.writeText("https://azertypow.github.io/head.project.adface/#/profile").then(() => {
+      navigator.clipboard.writeText( this.getProfileUrl(null) ).then(() => {
         this.status = 'shareClicked'
       })
     }
@@ -160,3 +204,38 @@ export default defineComponent({
   margin: auto;
 }
 </style>
+
+<!--<template>-->
+<!--  <html>-->
+<!--  <head>-->
+<!--    <title>Your Website Title</title>-->
+<!--    &lt;!&ndash; You can use Open Graph tags to customize link previews.-->
+<!--    Learn more: https://developers.facebook.com/docs/sharing/webmasters &ndash;&gt;-->
+<!--    <meta property="og:url"           content="https://azertypow.github.io/head.project.adface/#/profile" />-->
+<!--    <meta property="og:type"          content="website" />-->
+<!--    <meta property="og:title"         content="profile" />-->
+<!--    <meta property="og:description"   content="get your profile" />-->
+<!--&lt;!&ndash;    <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />&ndash;&gt;-->
+<!--  </head>-->
+<!--  <body>-->
+
+<!--  &lt;!&ndash; Load Facebook SDK for JavaScript &ndash;&gt;-->
+<!--  <div id="fb-root"></div>-->
+<!--  <script>(function(d, s, id) {-->
+<!--    var js, fjs = d.getElementsByTagName(s)[0];-->
+<!--    if (d.getElementById(id)) return;-->
+<!--    js = d.createElement(s); js.id = id;-->
+<!--    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";-->
+<!--    fjs.parentNode.insertBefore(js, fjs);-->
+<!--  }(document, 'script', 'facebook-jssdk'));</script>-->
+
+<!--  &lt;!&ndash; Your share button code &ndash;&gt;-->
+<!--  <div class="fb-share-button"-->
+<!--       data-href="https://azertypow.github.io/head.project.adface/#/profile"-->
+<!--       data-layout="button_count">-->
+<!--  </div>-->
+
+<!--  </body>-->
+<!--  </html>-->
+
+<!--</template>-->

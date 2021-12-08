@@ -1,6 +1,6 @@
 <template>
   <div class="v-term mmd--with-padding mmd--child-rm-margin mmd-with-scroll">
-      <div>
+      <div class="v-term__content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eos explicabo ipsam molestiae quia quisquam sint! Aliquid beatae, dignissimos est explicabo harum, ipsum minima natus nesciunt perspiciatis provident rerum tempora.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur dolor ducimus facere, fugiat id illum impedit itaque minima modi neque, odit perferendis quam quia quisquam, ratione sint. Distinctio, officiis!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi aperiam, consequuntur cum doloribus ducimus facilis impedit nostrum odio perspiciatis placeat porro quidem similique veniam voluptate. A commodi molestias vitae!</p>
@@ -26,5 +26,10 @@ export default defineComponent({
 <style lang="scss" scoped>
 .v-term {
   height: 100%;
+  padding-left: var(--left-padding);
+}
+
+.v-term__content {
+  max-width: 37em;
 }
 </style>

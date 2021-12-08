@@ -14,8 +14,7 @@
         v-if="!showVideo"
     >
       <div class="v-home__text mmd--with-padding mmd--child-rm-margin">
-        <p>An experience about micro-targeting and ad-tech. how algorithnnnnn your personal
-          <br>Not data is not collected and you </p>
+        <p>Swiss Digital Initiative presents ADface, an&nbsp;experience about digital trust, and how ″facial&nbsp;analysis technologies″ are deployed in targeted&nbsp;advertising.</p>
       </div>
 
       <div
@@ -308,7 +307,8 @@ export default defineComponent({
   background: var(--site-color--secondary);
   padding: var(--unit);
   position: relative;
-  width: 100%;
+  width: 75%;
+  max-width: 30em;
 }
 
 .v-home__check-box {
