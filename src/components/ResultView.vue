@@ -48,7 +48,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import {randomIntFromInterval} from "@/main"
+import {DURATION_PARAMETERS, randomIntFromInterval} from "@/main"
 import {useStore} from "vuex"
 
 export default defineComponent({
@@ -147,12 +147,12 @@ export default defineComponent({
 
         if (indexOfListOfImages < listOfImages.length) window.setTimeout(() => {
           this.placeImageInView(indexOfListOfImages, this.listOfImages)
-        }, 50)
+        }, DURATION_PARAMETERS.addsInterval)
 
         else {
           window.setTimeout(() => {
             this.status = "ended"
-          }, 2000)
+          }, DURATION_PARAMETERS.beforeShowingShareProfile)
         }
       }
     },

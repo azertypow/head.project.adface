@@ -11,7 +11,7 @@
 
     <div
         class="v-home__main"
-        v-if="!showVideo"
+        v-if="showForm"
     >
       <div class="v-home__text mmd--with-padding mmd--child-rm-margin">
         <p>Swiss Digital Initiative presents ADface, an&nbsp;experience about digital trust, and how ″facial&nbsp;analysis technologies″ are deployed in targeted&nbsp;advertising.</p>
@@ -69,7 +69,7 @@ import {
   resizeResults,
   TinyFaceDetectorOptions
 } from "face-api.js"
-import {IImageAnalysisResponse, params} from "@/main"
+import {DURATION_PARAMETERS, IImageAnalysisResponse, params} from "@/main"
 import ResultView from "@/components/ResultView.vue"
 import {useStore} from "vuex"
 import {MutationTypes} from "@/store"
@@ -86,6 +86,7 @@ export default defineComponent({
       store: useStore(),
       termValidate: false,
       showVideo: false,
+      showForm: true,
       imageProcessAnalysis: null as null | IImageAnalysisResponse,
     }
   },
@@ -169,7 +170,11 @@ export default defineComponent({
     async validateTerm() {
       this.termValidate = !this.termValidate
       this.showVideo = true
-      this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, await this.startImageProcess())
+
+      window.setTimeout(async () => {
+        this.showForm = false
+        this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, await this.startImageProcess())
+      }, DURATION_PARAMETERS.agreeAndCamera)
     },
 
     async startImageProcess(): Promise<IImageAnalysisResponse> {
@@ -228,7 +233,7 @@ export default defineComponent({
             emotion: "angry",
             gender: "Woman",
           })
-        }, 15000)
+        }, DURATION_PARAMETERS.cameraDuration)
 
         // const response = await fetch(
         //     `${params.baseUrl}/analyze`,
