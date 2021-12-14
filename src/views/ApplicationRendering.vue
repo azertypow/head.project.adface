@@ -1,5 +1,5 @@
 <template>
-  <div class="v-application-rendering">
+  <div class="v-application-rendering mmd--page">
 
     <main
         class="v-application-rendering__layout"

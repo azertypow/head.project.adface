@@ -1,5 +1,5 @@
 <template>
-  <div class="v-home">
+  <div class="v-home mmd--page">
 
     <div class="v-home__bg">
       <div class="v-home__bg__top-left"></div>

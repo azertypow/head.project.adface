@@ -84,7 +84,7 @@ export default defineComponent({
 
   .mmd-logo {
     display: block;
-    //transition: font-size ease-in-out 500ms, line-height ease-in-out 500ms;
+    transition: font-size ease-in-out 500ms, line-height ease-in-out 500ms;
 
     .small-nav & {
       font-size: 7rem;

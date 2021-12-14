@@ -65,7 +65,7 @@ export default {
   position: relative;
   opacity: 0;
   transform: translate3d(0, 50px, 0);
-  //transition: opacity .5s ease-in-out, transform .75s ease-in-out;
+  transition: opacity .5s ease-in-out, transform .75s ease-in-out;
 }
 
 .view-enter,

@@ -1,10 +1,11 @@
 <template>
-  <div class=“v-term__bg”>
-    <div class=“v-term__bg__top-left”></div>
-    <div class=“v-term__bg__top-right”></div>
-  </div>
+  <div class="v-term mmd--page mmd--with-padding mmd--child-rm-margin mmd-with-scroll">
 
-  <div class="v-term mmd--with-padding mmd--child-rm-margin mmd-with-scroll">
+    <div    class="v-term__bg">
+      <div  class="v-term__bg__top-left"></div>
+      <div  class="v-term__bg__top-right"></div>
+    </div>
+
       <div class="v-term__content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi eos explicabo ipsam molestiae quia quisquam sint! Aliquid beatae, dignissimos est explicabo harum, ipsum minima natus nesciunt perspiciatis provident rerum tempora.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consectetur dolor ducimus facere, fugiat id illum impedit itaque minima modi neque, odit perferendis quam quia quisquam, ratione sint. Distinctio, officiis!</p>
@@ -35,12 +36,19 @@ export default defineComponent({
 }
 
 .v-term__content {
+  position: relative;
   max-width: 37em;
-  padding-top:calc(100% / 7 * 1.2);
+  padding-top: calc(100vh / 7 * 2.25);
 }
 
-
-
+.v-term__bg {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 .v-term__bg__top-left {
   position: absolute;

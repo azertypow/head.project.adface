@@ -51,6 +51,7 @@ html {
   width: 100%;
   overflow: hidden;
   font-size: var(--unit);
+  background-color: black;
 }
 
 body {
@@ -73,7 +74,7 @@ body {
   line-height: var(--text-line-height);
   font-weight: 500;
 
-  background-color: var(--site-color--background);
+  background-color: black;
 }
 
 #app {
@@ -81,6 +82,11 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  background-color: black;
+}
+
+.mmd--page {
+  background-color: var(--site-color--background);
 }
 
 .mmd-button,
