@@ -182,7 +182,7 @@ export default defineComponent({
     position: absolute;
     display: block;
     transform: translate(-50%, -50%);
-    width: 500px;
+    width: 400px;
     height: auto;
   }
 }
