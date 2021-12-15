@@ -14,7 +14,7 @@
         v-if="showForm"
     >
       <div class="v-home__text mmd--with-padding mmd--child-rm-margin">
-        <p>Swiss Digital Initiative presents ADface, an&nbsp;experience about digital trust, and how ″facial&nbsp;analysis technologies″ are deployed in targeted&nbsp;advertising.</p>
+        <p>Swiss Digital Initiative presents ADface, an&nbsp;experience about digital trust, and&nbsp;how ″facial&nbsp;analysis technologies″ are&nbsp;deployed in targeted&nbsp;advertising.</p>
       </div>
 
       <div
@@ -29,7 +29,7 @@
         ></div>
         <p class="mmd--no-margin">
           Access to your camera is necessary, but no personal data is collected.
-          <router-link to="/term">I agree to the terms and conditions.</router-link>
+          <router-link to="/term">I&nbsp;agree to the terms and conditions.</router-link>
         </p>
       </div>
     </div>
