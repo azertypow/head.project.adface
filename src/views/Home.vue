@@ -28,7 +28,8 @@
             @click="validateTerm"
         ></div>
         <p class="mmd--no-margin">
-          <router-link to="/term">I agree to the terms and conditions</router-link>
+          Access to your camera is necessary, but no personal data is collected.
+          <router-link to="/term">I agree to the terms and conditions.</router-link>
         </p>
       </div>
     </div>
