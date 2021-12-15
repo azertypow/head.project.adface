@@ -19,7 +19,8 @@
 
   --site-color--color:      var(--site-color--main_dark);
 
-  --font-xxl__line-height: calc(var(--text-line-height) * 5.5);
+  --font-xxl__font-size:    calc(var(--text-font-size)   * 8);
+  --font-xxl__line-height:  calc(var(--text-line-height) * 5.5);
 
   // size
   --left-padding: 125px;
@@ -39,6 +40,13 @@
 
   @media all and (min-width: 1200px){
     --video-size: 25vw;
+  }
+
+  @media all and (min-width: 1400px) {
+    --unit: 20px;
+
+    --font-xxl__font-size:    calc(var(--text-font-size)   * 9);
+    --font-xxl__line-height:  calc(var(--text-line-height) * 7);
   }
 }
 

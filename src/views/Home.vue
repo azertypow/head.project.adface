@@ -322,7 +322,11 @@ export default defineComponent({
   position: relative;
   width: 100%;
   margin-top: var(--text-line-height);
-  margin-bottom: 100px;
+  margin-bottom: 90px;
+
+  @media all and (min-width: 1400px) {
+    margin-bottom: 160px;
+  }
 }
 
 .v-home__check-box__ui {
