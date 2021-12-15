@@ -2,7 +2,7 @@
 @import "grid";
 
 :root {
-  --unit: 20px;
+  --unit: 18px;
   --text-font-size:   calc( var(--unit) / 0.65 );
   --text-line-height: calc(var(--unit)  * 2);
 
@@ -19,7 +19,7 @@
 
   --site-color--color:      var(--site-color--main_dark);
 
-  --font-xxl__line-height: calc(var(--text-line-height) * 4);
+  --font-xxl__line-height: calc(var(--text-line-height) * 5.5);
 
   // size
   --left-padding: 125px;
