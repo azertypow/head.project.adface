@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "529edb99e9691e399ad2",
-    "url": "https://azertypow.github.io/head.project.adface/css/app.a0c82092.css"
+    "revision": "6af4ff43e42f648f8baa",
+    "url": "https://azertypow.github.io/head.project.adface/css/app.528ba30e.css"
   },
   {
     "revision": "6face68eb3ac92a814ae",
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/css/chunk-32b493ad.afcb9d49.css"
   },
   {
-    "revision": "3aae4d02b01312fa9de7",
-    "url": "https://azertypow.github.io/head.project.adface/css/chunk-3668ae96.d83d3075.css"
+    "revision": "7da03ea33da1a80ccfe6",
+    "url": "https://azertypow.github.io/head.project.adface/css/chunk-372f0246.e9d72d55.css"
   },
   {
     "revision": "47047fee26557b55d985952bdfc6cba1",
@@ -200,12 +200,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/img/share_profile.e10e5d91.svg"
   },
   {
-    "revision": "e4d404fd46bee246e51cf1145e0aaabb",
+    "revision": "eb625e1ae6395f1575a4a15966f09a3e",
     "url": "https://azertypow.github.io/head.project.adface/index.html"
   },
   {
-    "revision": "529edb99e9691e399ad2",
-    "url": "https://azertypow.github.io/head.project.adface/js/app.d6d50433.js"
+    "revision": "6af4ff43e42f648f8baa",
+    "url": "https://azertypow.github.io/head.project.adface/js/app.b8f8284a.js"
   },
   {
     "revision": "6face68eb3ac92a814ae",
@@ -216,8 +216,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/js/chunk-32b493ad.daa3233c.js"
   },
   {
-    "revision": "3aae4d02b01312fa9de7",
-    "url": "https://azertypow.github.io/head.project.adface/js/chunk-3668ae96.3a5c758e.js"
+    "revision": "7da03ea33da1a80ccfe6",
+    "url": "https://azertypow.github.io/head.project.adface/js/chunk-372f0246.4c611ec5.js"
   },
   {
     "revision": "909f00a64a1793095afb",
