@@ -138,9 +138,18 @@ export default defineComponent({
       if(imagesContainer instanceof HTMLDivElement) {
 
         const imgElement = document.createElement("img")
+        const imgXCorrection        = 64; // see render in browser
+        const imgYCorrection_top    = 170; // see render in browser 210 170
+        const imgYCorrection_bottom = 210; // see render in browser 210 170
+
+        const xPos = randomIntFromInterval( 0, 100 )
+        const yPos = randomIntFromInterval( 0, 100 )
+
+
+
         imgElement.src = listOfImages[indexOfListOfImages]
-        imgElement.style.left = randomIntFromInterval(0, 100) + 'vw'
-        imgElement.style.top  = randomIntFromInterval(0, 100) + 'vh'
+        imgElement.style.left = xPos < 50 ? `calc(${xPos}vw + ${imgXCorrection}px)`   : `calc(${xPos}vw - ${imgXCorrection}px)`
+        imgElement.style.top  = yPos < 50 ? `calc(${yPos}vh + ${imgYCorrection_bottom}px)`  : `calc(${yPos}vh - ${imgYCorrection_top}px)`
         imagesContainer.appendChild(imgElement)
 
         indexOfListOfImages++
