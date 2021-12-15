@@ -25,7 +25,7 @@
 
       <div
           class="v-application-rendering__layout__footer"
-      >addface.com
+      >addface.swiss-digital-initiative.org
       </div>
 
     </main>
