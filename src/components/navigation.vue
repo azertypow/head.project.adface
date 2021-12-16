@@ -79,7 +79,7 @@ export default defineComponent({
 
 .v-navigation__left {
   background-color: var(--site-color--main_light);
-  padding-right: 9vw;
+  padding-right: var(--gutter);
   max-width: 1260px;
 
   .mmd-logo {

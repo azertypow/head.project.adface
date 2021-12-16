@@ -1,5 +1,10 @@
 <template>
   <div class="v-about mmd--with-padding mmd--child-rm-margin mmd-with-scroll">
+    <div    class="v-term__bg">
+      <div  class="v-term__bg__top-left"></div>
+      <div  class="v-term__bg__top-right"></div>
+    </div>
+
     <div class="v-about__content">
       <p>This interactive experience was created by students of Raghid Jomaa, Emma Parente, Marta Revuelta, Alexia Mathieu, Laurent (Nom) as part of their Master Media Design.</p>
       <p>The experience was commissioned by the Swiss Digital Initiative and launched publicly at the World Economic Forum Annual Meeting in January 2022. Art can be a potent tool to build awareness about ethical questions raised by digital technologies. The often abstract and complex subject matter can be made more tangible and lead to concrete experiences that make people think about the digital services surrounding us. With this project, SDI hopes to contribute to a broad and sustained debate about digital trust.</p>
@@ -35,5 +40,35 @@ export default defineComponent({
 
 .v-about__content{
   max-width: 37em;
+  padding-top: calc(100vh / 7 * 2.25);
+}
+
+.v-term__bg {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.v-term__bg__top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--site-color--background--dark);
+  width: calc(100% / 7 * 5);
+  height: calc(100% / 7 * 1);
+  z-index: 3;
+}
+
+.v-term__bg__top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--site-color--secondary);
+  width: calc(100% / 7 * 3);
+  height: calc(100% / 7 * 2);
+  z-index: 2;
 }
 </style>
