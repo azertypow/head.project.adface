@@ -101,7 +101,7 @@ export default defineComponent({
         "https://azertypow.github.io/head.project.adface/img/adds/b17.png",
         "https://azertypow.github.io/head.project.adface/img/adds/b18.png",
         "https://azertypow.github.io/head.project.adface/img/adds/b19.png",
-      ]
+      ] //35
     }
   },
 
@@ -114,8 +114,8 @@ export default defineComponent({
     getProfileUrl(get: null | "facebook" | "twitter" | 'mail'): string {
 
       const profileUrl = 'https://azertypow.github.io/head.project.adface/#/profile'
-      const subject = "AddFace Application"
-      const text = 'AddFace prototype text description'
+      const subject = "AdFace Application"
+      const text = 'AdFace prototype text description'
       const hashtags = 'webapp, AI'
 
       if(get === "mail")

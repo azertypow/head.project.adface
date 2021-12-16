@@ -14,39 +14,31 @@
 
       <div
           class="v-application-rendering__layout__id"
-      >ADface1638384486059
+      >ADface{{new Date().getTime()}}
       </div>
 
       <div
           class="v-application-rendering__layout__txt"
-      >You were targeted with these ads because you are a <span>latino</span> <span>women</span> of <span>35</span> years old.
-        <br>You are disgusted and look smart but really poor.
+      >
+        You were targeted with these ads because you are {{raceSentence}} {{imageAnalysisResponse.gender.toLowerCase()}} of {{imageAnalysisResponse.age}} years old.
+        <br>You are {{emotion}} and look {{sentence}}.
       </div>
 
       <div
           class="v-application-rendering__layout__footer"
-      >addface.swiss-digital-initiative.org
-      </div>
+      >adface.swiss-digital-initiative.org</div>
 
     </main>
 
-<!--    <div-->
-<!--        class="v-application-rendering__links mmd-box"-->
-<!--    >-->
-<!--      <router-link to="/">try the experience</router-link>-->
-<!--      <button>share result</button>-->
-<!--    </div>-->
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import {
-  IImageAnalysisResponseAge,
-  IImageAnalysisResponseEmotion,
-  IImageAnalysisResponseGender,
-  URL_PARAMS_NAMES
+  IImageAnalysisResponse,
 } from "@/main"
+import {useStore} from "vuex"
 
 export default defineComponent({
   name: 'ApplicationRendering',
@@ -56,39 +48,44 @@ export default defineComponent({
 
   data() {
     return {
-      age:      null as IImageAnalysisResponseAge | null,
-      emotion:  null as IImageAnalysisResponseEmotion | null,
-      gender:   null as IImageAnalysisResponseGender | null,
+      store: useStore(),
+    }
+  },
+
+  computed: {
+
+    emotion(): string {
+      if      (this.imageAnalysisResponse.emotion === "fear")     return "fearful"
+      else if (this.imageAnalysisResponse.emotion === "disgust")  return "disgusted"
+      else if (this.imageAnalysisResponse.emotion === "surprise") return "surprised"
+      return this.imageAnalysisResponse.emotion
+    },
+
+    raceSentence(): string {
+      const race = this.imageAnalysisResponse.race
+
+      if(race === "asian" || race === "indian") return `an ${race}`
+      return `a ${race}`
+    },
+
+    sentence(): string {
+      function random0_1() {  return Math.floor( Math.random() * 2) }
+
+      let randomSentence_start = ["smart", "handsome"][random0_1()];
+      let randomSentence_end = ["and wealthy", "but really poor"][random0_1()];
+
+      return randomSentence_start + " " + randomSentence_end
+    },
+
+    imageAnalysisResponse(): IImageAnalysisResponse {
+      return this.store.state.imageAnalysisResponse
     }
   },
 
   mounted() {
-
-    const ogTitle       = document.querySelector('[property="og:title"]')
-    const ogDescription = document.querySelector('[property="og:description"]')
-    const ogImage       = document.querySelector('[property="og:image"]')
-
-    ogTitle?.setAttribute('content', 'custom title')
-    ogDescription?.setAttribute('content', 'custom description')
-    ogImage?.setAttribute('content', 'https://azertypow.github.io/head.project.adface/img/img.png')
-
-    if(
-        this.age !== null
-        && this.emotion !== null
-        && this.gender !== null
-    ) {
-
-    }
   },
 
   methods: {
-    getUrlParams() {
-      const urlSearchParams = new URLSearchParams(window.location.search)
-
-      this.age      = urlSearchParams.get(URL_PARAMS_NAMES.age) as any
-      this.emotion  = urlSearchParams.get(URL_PARAMS_NAMES.emotion) as any
-      this.gender   = urlSearchParams.get(URL_PARAMS_NAMES.gender) as any
-    }
   },
 
 });

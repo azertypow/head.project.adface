@@ -55,6 +55,12 @@
       />
     </div>
 
+    <img
+        v-if="snapShot"
+        :src="snapShot"
+        alt="video snapshot"
+    />
+
   </div>
 </template>
 
@@ -89,6 +95,8 @@ export default defineComponent({
       showVideo: false,
       showForm: true,
       imageProcessAnalysis: null as null | IImageAnalysisResponse,
+      snapShot: null as string | null,
+      imageAnalyseResponse: undefined as IImageAnalysisResponse | undefined | null
     }
   },
 
@@ -174,19 +182,48 @@ export default defineComponent({
 
       window.setTimeout(async () => {
         this.showForm = false
-        this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, await this.startImageProcess())
+
+        this.startImageProcess().then(analyseResp => {
+          this.imageAnalyseResponse = analyseResp
+          console.log("result ok")
+        }).catch(reason => {
+          console.error("image process error: \n" + reason)
+          this.imageAnalyseResponse = null
+        })
+
+        this.saveAnalyseResponse()
+
       }, DURATION_PARAMETERS.agreeAndCamera)
     },
 
-    async startImageProcess(): Promise<IImageAnalysisResponse> {
-      return new Promise(async (resolve, reject) => {
-        const snapWebcam = this.snapWebcam({})
-
-        if (snapWebcam) {
-          console.log( snapWebcam )
-          resolve(await this.sendImageData(snapWebcam))
+    saveAnalyseResponse() {
+      window.setTimeout(() => {
+        if (this.imageAnalyseResponse !== undefined) {
+          if (this.imageAnalyseResponse !== null) {
+            this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, this.imageAnalyseResponse)
+            console.log(this.imageAnalyseResponse)
+            console.log("analyse added")
+          } else {
+            console.log("oups try again")
+            // try again
+          }
+        } else {
+          this.saveAnalyseResponse()
         }
-        else reject("snapWebcam error")
+      }, DURATION_PARAMETERS.cameraDuration)
+    },
+
+
+async startImageProcess(): Promise<IImageAnalysisResponse> {
+      return new Promise(async (resolve, reject) => {
+        this.snapShot = this.snapWebcam({})
+
+        if(this.snapShot.length > 0) {
+          this.sendImageData(this.snapShot)
+              .then(value   => {resolve(value)})
+              .catch(error  => {reject("sendImageData error \n" + error)})
+        }
+        else reject("snapShot error")
       })
     },
 
@@ -196,7 +233,7 @@ export default defineComponent({
                  height = 240,
                  image_format = 'jpeg',
                  jpeg_quality = 90,
-               }) {
+               }): string {
 
       // if(this.$refs.canvasOverlay instanceof HTMLCanvasElement) {
       //   return this.$refs.canvasOverlay.toDataURL(`image/${image_format}`, jpeg_quality / 100 )
@@ -211,6 +248,8 @@ export default defineComponent({
         drawCanvasContext?.drawImage(this.$refs.videoElement, 0, 0, this.$refs.videoElement.videoWidth, this.$refs.videoElement.videoHeight)
         return drawCanvas.toDataURL(`image/${image_format}`, jpeg_quality / 100 )
       }
+
+      return ""
     },
 
 
@@ -228,22 +267,20 @@ export default defineComponent({
           }
         }
 
-        window.setTimeout(() => {
-          resolve({
-            age: "0-10",
-            emotion: "angry",
-            gender: "Woman",
-          })
-        }, DURATION_PARAMETERS.cameraDuration)
+        //   resolve({
+        //     age: "0-10",
+        //     emotion: "angry",
+        //     gender: "Woman",
+        //   })
 
-        // const response = await fetch(
-        //     `${params.baseUrl}/analyze`,
-        //     options,
-        // )
-        //
-        // const result = await response.json()
-        //
-        // console.log(result)
+        fetch(
+            `${params.baseUrl}/analyze`,
+            options,
+        ).then(async value => {
+          resolve( await value.json() )
+        }).catch(reason => {
+          reject("analytic api error: " + reason)
+        })
 
       })
     }

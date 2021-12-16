@@ -5,7 +5,8 @@
       <div  class="v-term__bg__top-right"></div>
     </div>
 
-    <div class="v-about__content">
+    <div class="v-about__content mmd--child-rm-margin">
+      <h2>About</h2>
       <p>This interactive experience was created by students of Raghid Jomaa, Emma Parente, Marta Revuelta, Alexia Mathieu, Laurent (Nom) as part of their Master Media Design.</p>
       <p>The experience was commissioned by the Swiss Digital Initiative and launched publicly at the World Economic Forum Annual Meeting in January 2022. Art can be a potent tool to build awareness about ethical questions raised by digital technologies. The often abstract and complex subject matter can be made more tangible and lead to concrete experiences that make people think about the digital services surrounding us. With this project, SDI hopes to contribute to a broad and sustained debate about digital trust.</p>
       <p>The Swiss Digital Initiative (SDI) is an independent, non-profit foundation headquartered in Geneva and set up in 2020 by the association digitalswitzerland and under the patronage of Federal Councillor Ueli Maurer. The SDI pursues concrete projects with the aim of safeguarding ethical standards and promoting responsible behaviour in the digital world.</p>
@@ -40,7 +41,7 @@ export default defineComponent({
 
 .v-about__content{
   max-width: 37em;
-  padding-top: calc(100vh / 7 * 2.25);
+  padding-top: calc(100vh / 7 * 2);
 }
 
 .v-term__bg {
