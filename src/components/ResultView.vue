@@ -10,28 +10,29 @@
     <div
         class="v-result-view__share"
         v-if="status === 'ended' || status === 'shareClicked'"
+        @click="getProfile"
     >
       <img
           alt="ui share icon"
           class="v-result-view__share-icon"
-          src="../assets/share_profile.svg">
+          src="../assets/discover_profile_2.svg">
 
-      <button
-          class="mmd-button--small"
-          @click="shareClicked"
-      >copy link to clipboard</button>
+<!--      <button-->
+<!--          class="mmd-button&#45;&#45;small"-->
+<!--          @click="shareClicked"-->
+<!--      >copy link to clipboard</button>-->
 
-      <a
-          class="mmd-button mmd-button--small"
-          target="_blank"
-          :href="getUrlToShare('facebook')"
-      >share to facebook</a>
+<!--      <a-->
+<!--          class="mmd-button mmd-button&#45;&#45;small"-->
+<!--          target="_blank"-->
+<!--          :href="getUrlToShare('facebook')"-->
+<!--      >share to facebook</a>-->
 
-      <a
-          class="mmd-button mmd-button--small"
-          target="_blank"
-          :href="getUrlToShare('twitter')"
-      >share to twitter</a>
+<!--      <a-->
+<!--          class="mmd-button mmd-button&#45;&#45;small"-->
+<!--          target="_blank"-->
+<!--          :href="getUrlToShare('twitter')"-->
+<!--      >share to twitter</a>-->
 
       <div
           v-if="status === 'shareClicked'"
@@ -44,6 +45,7 @@
 import { defineComponent } from 'vue';
 import {DURATION_PARAMETERS, getAdsFolderName, params, randomIntFromInterval} from "@/main"
 import {useStore} from "vuex"
+import {MutationTypes} from "@/store"
 
 export default defineComponent({
   name: 'ResultView',
@@ -99,6 +101,10 @@ export default defineComponent({
   },
 
   methods: {
+
+    getProfile() {
+      this.store.commit(MutationTypes.SHOW_PROFILE, true)
+    },
 
     getUrlToShare(get: null | "facebook" | "twitter"): string {
 

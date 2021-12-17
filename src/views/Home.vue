@@ -96,7 +96,6 @@ export default defineComponent({
       termValidate: false,
       showVideo: false,
       showForm: true,
-      snapShot: null as string | null,
       imageAnalyseResponse: undefined as undefined | null | IImageAnalysisResponse
     }
   },
@@ -105,7 +104,11 @@ export default defineComponent({
     showResult(): boolean {
       console.log( this.store.state.imageAnalysisResponse )
       return this.store.state.imageAnalysisResponse !== null
-    }
+    },
+
+    snapShot(): string | null {
+      return this.store.state.snapShot
+    },
   },
 
   async mounted() {
@@ -229,9 +232,9 @@ export default defineComponent({
 
 async startImageProcess(): Promise<IImageAnalysisResponse> {
       return new Promise(async (resolve, reject) => {
-        this.snapShot = this.snapWebcam({})
+        this.store.commit(MutationTypes.SAVE_SNAP_SHOT, this.snapWebcam({}))
 
-        if(this.snapShot.length > 0) {
+        if(this.snapShot !== null && this.snapShot.length > 0) {
           this.sendImageData(this.snapShot)
               .then(value   => {resolve(value)})
               .catch(error  => {reject("sendImageData error \n" + error)})
@@ -425,6 +428,7 @@ async startImageProcess(): Promise<IImageAnalysisResponse> {
   object-fit: cover;
   display: block;
   pointer-events: none;
+  filter: grayscale(1);
 }
 
 .v-home__video-render {

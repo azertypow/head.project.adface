@@ -5,6 +5,13 @@
       }"
       class="v-app">
 
+    <div
+        v-if="store.state.showProfile"
+        class="v-app__profile"
+    >
+      <ApplicationRendering></ApplicationRendering>
+    </div>
+
     <router-view v-slot="{ Component }">
       <transition name="view" mode="out-in"  >
         <component :is="Component" />
@@ -20,8 +27,9 @@
 <script lang="ts">
 import Navigation from "@/components/navigation.vue"
 import {useStore} from "vuex"
+import ApplicationRendering from "@/components/ApplicationRendering.vue"
 export default {
-  components: {Navigation},
+  components: {ApplicationRendering, Navigation},
 
   data(){
     return {
@@ -73,6 +81,15 @@ export default {
 .view-leave {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+.v-app__profile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 900000000;
 }
 
 </style>

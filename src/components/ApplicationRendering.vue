@@ -1,7 +1,7 @@
 <template>
-  <div class="v-application-rendering mmd--page">
+  <div class="v-application-rendering">
 
-    <main
+    <div
         class="v-application-rendering__layout"
     >
 
@@ -9,7 +9,7 @@
       <div
           class="v-application-rendering__layout__img"
       >
-        <img src="../assets/a.png" alt="">
+        <img :src="store.state.snapShot" alt="">
       </div>
 
       <div
@@ -28,7 +28,7 @@
           class="v-application-rendering__layout__footer"
       >adface.swiss-digital-initiative.org</div>
 
-    </main>
+    </div>
 
   </div>
 </template>
@@ -93,12 +93,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-application-rendering {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: white;
 }
 
 .v-application-rendering__layout {
@@ -111,22 +109,28 @@ export default defineComponent({
   justify-content: space-between;
   background: var(--site-color--background);
   padding: var(--text-line-height);
-  width: 670px;
+  width: var(--profile-width);
+  box-shadow: black 0px 0px 40px 0px;
 }
 
 .v-application-rendering__layout__img {
-  width: 50%;
+  width: calc( var(--profile-width) / 2 );
+  height: calc( var(--profile-width) / 2 );
   padding-right: var(--text-line-height);
   box-sizing: border-box;
 
   > img {
     display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
   }
 }
 
 .v-application-rendering__layout__id {
   width: 50%;
+  text-align: right;
 }
 
 .v-application-rendering__layout__txt {
