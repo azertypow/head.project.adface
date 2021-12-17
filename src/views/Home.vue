@@ -42,13 +42,13 @@
         }"
     >
       <img
-          v-if="snapShot"
+          v-if="showSnap"
           :src="snapShot"
           class="v-home__img-render"
           alt="video snapshot"
       />
       <video
-          v-if="!snapShot"
+          v-if="!showSnap"
           autoplay
           muted
           playsinline
@@ -57,7 +57,7 @@
           ref="videoElement"
       ></video>
       <canvas
-          v-if="!snapShot"
+          v-if="!showSnap"
           class="v-home__overlay"
           ref="canvasOverlay"
       />
@@ -103,7 +103,8 @@ export default defineComponent({
       termValidate: false,
       showVideo: false,
       showForm: true,
-      imageAnalyseResponse: undefined as undefined | null | IImageAnalysisResponse
+      imageAnalyseResponse: undefined as undefined | null | IImageAnalysisResponse,
+      showSnap: false
     }
   },
 
@@ -201,6 +202,7 @@ export default defineComponent({
 
         this.startImageProcess().then(analyseResp => {
           this.imageAnalyseResponse = analyseResp
+          this.showSnap = true
           console.log("result ok")
         }).catch(reason => {
           console.error("image process error: \n" + reason)

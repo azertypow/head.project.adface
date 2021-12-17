@@ -61,19 +61,19 @@ export function randomIntFromInterval(min: number, max: number) { // min and max
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-// export const DURATION_PARAMETERS = {
-//   agreeAndCamera:             2_500, //ms
-//   cameraDuration:             5_000, //ms
-//   addsInterval:               500, //ms
-//   beforeShowingShareProfile:  1_000, //ms
-// }
-
 export const DURATION_PARAMETERS = {
-  agreeAndCamera:             50, //ms
-  cameraDuration:             50, //ms
-  addsInterval:               50, //ms
-  beforeShowingShareProfile:  50, //ms
+  agreeAndCamera:             2_500, //ms
+  cameraDuration:             5_000, //ms
+  addsInterval:               500, //ms
+  beforeShowingShareProfile:  1_000, //ms
 }
+
+// export const DURATION_PARAMETERS = {
+//   agreeAndCamera:             50, //ms
+//   cameraDuration:             50, //ms
+//   addsInterval:               50, //ms
+//   beforeShowingShareProfile:  50, //ms
+// }
 
 export function getAdsFolderName(imageAnalysisResponse: IImageAnalysis): string[] {
 
