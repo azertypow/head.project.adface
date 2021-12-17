@@ -30,11 +30,13 @@
   --box-shadow: var(--site-color--main) 0 10px 30px -15px;
 
   --border-radius: 5px;
-  --border-width: 3px;
+  --border-width: 2px;
 
   --video-size: 50vw;
 
   --profile-width: 420px;
+
+  --min-width: 780px; // synych with html media query scroll auto
 
   @media all and (min-width: 800px){
     --video-size: 33.33333vw;
@@ -43,6 +45,7 @@
   @media all and (min-width: 920px){
     --unit: 15px;
     --profile-width: 530px;
+    --border-width: 3px;
   }
 
   @media all and (min-width: 1100px){
