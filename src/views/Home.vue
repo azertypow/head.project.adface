@@ -293,7 +293,7 @@ async startImageProcess(): Promise<IImageAnalysisResponse> {
         }
 
         fetch(
-            `${params.baseUrl}/analyze`,
+            `${params.apiBaseUrl}/analyze`,
             options,
         ).then(async value => {
           resolve( await value.json() )
