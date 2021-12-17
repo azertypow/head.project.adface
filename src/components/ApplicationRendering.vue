@@ -28,6 +28,27 @@
           class="v-application-rendering__layout__footer"
       >adface.swiss-digital-initiative.org</div>
 
+      <div
+          class="v-application-rendering__layout__share"
+      >
+              <div
+                  class="v-application-rendering__share-link"
+                  @click="shareClicked"
+              ><img src="../assets/copy_paste.svg" alt="copy sharing"></div>
+
+              <a
+                  class="v-application-rendering__share-link"
+                  target="_blank"
+                  :href="getUrlToShare('facebook')"
+              ><img src="../assets/facebook.svg" alt="facebook sharing"></a>
+
+              <a
+                  class="v-application-rendering__share-link"
+                  target="_blank"
+                  :href="getUrlToShare('twitter')"
+              ><img src="../assets/twitter.svg" alt="twitter sharing"></a>
+      </div>
+
     </div>
 
   </div>
@@ -36,7 +57,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import {
-  IImageAnalysis,
+  IImageAnalysis, params,
 } from "@/main"
 import {useStore} from "vuex"
 
@@ -87,6 +108,25 @@ export default defineComponent({
   },
 
   methods: {
+    shareClicked() {
+      navigator.clipboard.writeText( this.getUrlToShare(null) ).then(() => {
+        console.log("share clicked")
+      })
+    },
+
+    getUrlToShare(get: null | "facebook" | "twitter"): string {
+
+      const twitterText     = `try AdFace`
+      const twitterHashtags = 'webapp, AI'
+
+      if (get === "twitter")
+        return `https://twitter.com/intent/tweet?text=${twitterText}&url=${params.webappBaseUrl}&hashtags=${twitterHashtags}`
+
+      if (get === "facebook")
+        return `https://www.facebook.com/sharer/sharer.php?u=${params.webappBaseUrl}`
+
+      return encodeURI(params.webappBaseUrl)
+    },
   },
 
 });
@@ -143,6 +183,31 @@ export default defineComponent({
 .v-application-rendering__layout__footer {
   padding-top: var(--text-line-height);
   width: 66.66666%;
+}
+
+.v-application-rendering__layout__share {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.v-application-rendering__share-link {
+  width: 100%;
+  display: block;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
+
+  > img {
+    width: 30px;
+    height: auto;
+  }
 }
 
 </style>

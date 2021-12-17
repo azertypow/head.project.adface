@@ -9,7 +9,7 @@
 
     <div
         class="v-result-view__share"
-        v-if="status === 'ended' || status === 'shareClicked'"
+        v-if="status === 'ended'"
         @click="getProfile"
     >
       <img
@@ -17,26 +17,6 @@
           class="v-result-view__share-icon"
           src="../assets/discover_profile_2.svg">
 
-<!--      <button-->
-<!--          class="mmd-button&#45;&#45;small"-->
-<!--          @click="shareClicked"-->
-<!--      >copy link to clipboard</button>-->
-
-<!--      <a-->
-<!--          class="mmd-button mmd-button&#45;&#45;small"-->
-<!--          target="_blank"-->
-<!--          :href="getUrlToShare('facebook')"-->
-<!--      >share to facebook</a>-->
-
-<!--      <a-->
-<!--          class="mmd-button mmd-button&#45;&#45;small"-->
-<!--          target="_blank"-->
-<!--          :href="getUrlToShare('twitter')"-->
-<!--      >share to twitter</a>-->
-
-      <div
-          v-if="status === 'shareClicked'"
-      >text copied to clipboard</div>
     </div>
   </div>
 </template>
@@ -55,7 +35,7 @@ export default defineComponent({
   data() {
     return {
       store: useStore(),
-      status: "started" as "started" | "ended" | "shareClicked",
+      status: "started" as "started" | "ended",
       listOfImages: [
         "000001.jpg",
         "000002.jpg",
@@ -106,21 +86,6 @@ export default defineComponent({
       this.store.commit(MutationTypes.SHOW_PROFILE, true)
     },
 
-    getUrlToShare(get: null | "facebook" | "twitter"): string {
-
-      const twitterText     = `try AdFace`
-      const twitterHashtags = 'webapp, AI'
-
-      if (get === "twitter")
-        return `https://twitter.com/intent/tweet?text=${twitterText}&url=${params.webappBaseUrl}&hashtags=${twitterHashtags}`
-
-      if (get === "facebook")
-        return `https://www.facebook.com/sharer/sharer.php?u=${params.webappBaseUrl}`
-
-      return encodeURI(params.webappBaseUrl)
-    },
-
-
     placeImageInView(indexOfListOfImages: number, listOfImages: string[]) {
 
       const imagesContainer = this.$refs.imagesContainer
@@ -154,11 +119,6 @@ export default defineComponent({
       }
     },
 
-    shareClicked() {
-      navigator.clipboard.writeText( this.getUrlToShare(null) ).then(() => {
-        this.status = 'shareClicked'
-      })
-    }
   },
 
 });
