@@ -4,6 +4,7 @@
  * @type {import('@vue/cli-service').ProjectOptions}
  */
 module.exports = {
+    devServer: { https: true },
     publicPath:
-        process.env.NODE_ENV === "production" ? "https://azertypow.github.io/head.project.adface/" : "http://localhost:8080/"
+        process.env.NODE_ENV === "production" ? "https://azertypow.github.io/head.project.adface/" : "https://localhost:8080/"
 }

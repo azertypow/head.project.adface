@@ -16340,12 +16340,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/ads/42b-output_woman_60_unhappy/000042.jpg"
   },
   {
-    "revision": "b2e09dc0e6feaa482afa",
+    "revision": "c2b368c64e3a48548559",
     "url": "https://azertypow.github.io/head.project.adface/css/app.1466cabd.css"
   },
   {
-    "revision": "14d8a17ee26d51de2821",
-    "url": "https://azertypow.github.io/head.project.adface/css/chunk-799fb0cd.911398b8.css"
+    "revision": "50a1f1dd06c1e46a44ce",
+    "url": "https://azertypow.github.io/head.project.adface/css/chunk-78fceb78.911398b8.css"
   },
   {
     "revision": "44fb4a829f4ceb151812",
@@ -16384,16 +16384,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/img/twitter.9e0425c6.svg"
   },
   {
-    "revision": "71fabe761c2eca93fbde0e885553d288",
+    "revision": "e2235bcf1ff8b93401a59ebd04b8de30",
     "url": "https://azertypow.github.io/head.project.adface/index.html"
   },
   {
-    "revision": "b2e09dc0e6feaa482afa",
-    "url": "https://azertypow.github.io/head.project.adface/js/app.610b1f45.js"
+    "revision": "c2b368c64e3a48548559",
+    "url": "https://azertypow.github.io/head.project.adface/js/app.db0adb03.js"
   },
   {
-    "revision": "14d8a17ee26d51de2821",
-    "url": "https://azertypow.github.io/head.project.adface/js/chunk-799fb0cd.d1d05036.js"
+    "revision": "50a1f1dd06c1e46a44ce",
+    "url": "https://azertypow.github.io/head.project.adface/js/chunk-78fceb78.14806ff8.js"
   },
   {
     "revision": "44fb4a829f4ceb151812",
