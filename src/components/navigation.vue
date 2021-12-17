@@ -21,14 +21,15 @@
         >
       </div>
 
-      <div class="v-navigation__about font--small mmd--with-gutter"
-          @click="onAboutClick"
+      <router-link
+          :to="aboutIsOpen ? '/' : '/about'"
+          class="v-navigation__about font--small mmd--with-gutter"
           :class="{'is-open':aboutIsOpen}"
       ><span
           v-if="!aboutIsOpen"
       >about the project</span><span
           v-else
-      >close about</span> <span class="v-navigation__about__ui">+</span></div>
+      >close about</span> <span class="v-navigation__about__ui">+</span></router-link>
     </div>
   </nav>
 </template>
@@ -50,15 +51,9 @@ export default defineComponent({
   },
 
   computed:{
-    aboutIsOpen(): boolean {
-      return this.store.state.aboutIsOpen
+    aboutIsOpen() {
+      return this.$route.name === "About"
     },
-  },
-
-  methods: {
-    onAboutClick() {
-      this.store.commit(MutationTypes.ABOUT_IS_OPEN, !this.aboutIsOpen)
-    }
   },
 
 });
@@ -121,6 +116,7 @@ export default defineComponent({
   color: var(--site-color--main_light);
   text-align: right;
   line-height: 2rem;
+  border: none;
 }
 
 .v-navigation__about__ui {

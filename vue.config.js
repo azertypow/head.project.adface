@@ -5,5 +5,5 @@
  */
 module.exports = {
     publicPath:
-        process.env.NODE_ENV === "production" ? "https://azertypow.github.io/head.project.adface/" : "/"
+        process.env.NODE_ENV === "production" ? "https://azertypow.github.io/head.project.adface/" : "http://localhost:8080/"
 }

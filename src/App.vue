@@ -5,10 +5,6 @@
       }"
       class="v-app">
 
-    <transition name="view" mode="out-in"  >
-      <about v-if="aboutIsOpen"/>
-    </transition>
-
     <router-view v-slot="{ Component }">
       <transition name="view" mode="out-in"  >
         <component :is="Component" />
@@ -23,10 +19,9 @@
 
 <script lang="ts">
 import Navigation from "@/components/navigation.vue"
-import About from "@/components/About.vue"
 import {useStore} from "vuex"
 export default {
-  components: {About, Navigation},
+  components: {Navigation},
 
   data(){
     return {

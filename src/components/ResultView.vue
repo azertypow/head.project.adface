@@ -24,19 +24,13 @@
       <a
           class="mmd-button mmd-button--small"
           target="_blank"
-          :href="getProfileUrl('mail')"
-      >share to mail</a>
-
-      <a
-          class="mmd-button mmd-button--small"
-          target="_blank"
-          :href="getProfileUrl('facebook')"
+          :href="getUrlToShare('facebook')"
       >share to facebook</a>
 
       <a
           class="mmd-button mmd-button--small"
           target="_blank"
-          :href="getProfileUrl('twitter')"
+          :href="getUrlToShare('twitter')"
       >share to twitter</a>
 
       <div
@@ -48,7 +42,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import {DURATION_PARAMETERS, randomIntFromInterval} from "@/main"
+import {DURATION_PARAMETERS, getAdsFolderName, params, randomIntFromInterval} from "@/main"
 import {useStore} from "vuex"
 
 export default defineComponent({
@@ -61,46 +55,41 @@ export default defineComponent({
       store: useStore(),
       status: "started" as "started" | "ended" | "shareClicked",
       listOfImages: [
-        "https://azertypow.github.io/head.project.adface/img/adds/a0.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a1.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a2.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a3.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a4.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a5.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a6.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a7.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a8.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a9.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a10.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a11.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a12.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a13.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a14.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a15.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a16.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a17.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a18.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/a19.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b0.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b1.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b2.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b3.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b4.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b5.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b6.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b7.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b8.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b9.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b10.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b11.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b12.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b13.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b14.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b15.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b16.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b17.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b18.png",
-        "https://azertypow.github.io/head.project.adface/img/adds/b19.png",
+        "000001.jpg",
+        "000002.jpg",
+        "000003.jpg",
+        "000004.jpg",
+        "000005.jpg",
+        "000006.jpg",
+        "000007.jpg",
+        "000008.jpg",
+        "000009.jpg",
+        "000010.jpg",
+        "000011.jpg",
+        "000012.jpg",
+        "000013.jpg",
+        "000014.jpg",
+        "000015.jpg",
+        "000016.jpg",
+        "000017.jpg",
+        "000018.jpg",
+        "000019.jpg",
+        "000020.jpg",
+        "000021.jpg",
+        "000022.jpg",
+        "000023.jpg",
+        "000024.jpg",
+        "000025.jpg",
+        "000026.jpg",
+        "000027.jpg",
+        "000028.jpg",
+        "000029.jpg",
+        "000030.jpg",
+        "000031.jpg",
+        "000032.jpg",
+        "000033.jpg",
+        "000034.jpg",
+        "000035.jpg",
       ] //35
     }
   },
@@ -111,23 +100,18 @@ export default defineComponent({
 
   methods: {
 
-    getProfileUrl(get: null | "facebook" | "twitter" | 'mail'): string {
+    getUrlToShare(get: null | "facebook" | "twitter"): string {
 
-      const profileUrl = 'https://azertypow.github.io/head.project.adface/#/profile'
-      const subject = "AdFace Application"
-      const text = 'AdFace prototype text description'
-      const hashtags = 'webapp, AI'
-
-      if(get === "mail")
-        return `mailto:?subject=${subject}&body=${text}`
+      const twitterText     = `try AdFace`
+      const twitterHashtags = 'webapp, AI'
 
       if (get === "twitter")
-        return `https://twitter.com/intent/tweet?text=${text}&url=${profileUrl}&hashtags=${hashtags}`
+        return `https://twitter.com/intent/tweet?text=${twitterText}&url=${params.webappBaseUrl}&hashtags=${twitterHashtags}`
 
       if (get === "facebook")
-        return `https://www.facebook.com/sharer/sharer.php?u=${profileUrl}`
+        return `https://www.facebook.com/sharer/sharer.php?u=${params.webappBaseUrl}`
 
-      return encodeURI(profileUrl)
+      return encodeURI(params.webappBaseUrl)
     },
 
 
@@ -138,18 +122,16 @@ export default defineComponent({
       if(imagesContainer instanceof HTMLDivElement) {
 
         const imgElement = document.createElement("img")
-        const imgXCorrection        = 64; // see render in browser
-        const imgYCorrection_top    = 170; // see render in browser 210 170
-        const imgYCorrection_bottom = 210; // see render in browser 210 170
+        const imgXCorrection        = 65; // see render in browser
+        const imgYCorrection_top    = 170; // see render in browser
+        const imgYCorrection_bottom = 210; // see render in browser
 
-        const xPos = randomIntFromInterval( 0, 100 )
-        const yPos = randomIntFromInterval( 0, 100 )
+        const xPos = randomIntFromInterval( imgXCorrection, window.innerWidth - imgXCorrection )
+        const yPos = randomIntFromInterval( imgYCorrection_top, window.innerHeight - imgYCorrection_bottom )
 
-
-
-        imgElement.src = listOfImages[indexOfListOfImages]
-        imgElement.style.left = xPos < 50 ? `calc(${xPos}vw + ${imgXCorrection}px)`   : `calc(${xPos}vw - ${imgXCorrection}px)`
-        imgElement.style.top  = yPos < 50 ? `calc(${yPos}vh + ${imgYCorrection_bottom}px)`  : `calc(${yPos}vh - ${imgYCorrection_top}px)`
+        imgElement.src = params.webappBaseUrl + "/ads/" + getAdsFolderName(this.store.state.imageAnalysisResponse)[randomIntFromInterval(0, 1)] + '/' + listOfImages[indexOfListOfImages]
+        imgElement.style.left = `${xPos}px`
+        imgElement.style.top  = `${yPos}px`
         imagesContainer.appendChild(imgElement)
 
         indexOfListOfImages++
@@ -167,7 +149,7 @@ export default defineComponent({
     },
 
     shareClicked() {
-      navigator.clipboard.writeText( this.getProfileUrl(null) ).then(() => {
+      navigator.clipboard.writeText( this.getUrlToShare(null) ).then(() => {
         this.status = 'shareClicked'
       })
     }
@@ -191,7 +173,7 @@ export default defineComponent({
     position: absolute;
     display: block;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 129px;
     height: auto;
   }
 }
@@ -213,38 +195,3 @@ export default defineComponent({
   margin: auto;
 }
 </style>
-
-<!--<template>-->
-<!--  <html>-->
-<!--  <head>-->
-<!--    <title>Your Website Title</title>-->
-<!--    &lt;!&ndash; You can use Open Graph tags to customize link previews.-->
-<!--    Learn more: https://developers.facebook.com/docs/sharing/webmasters &ndash;&gt;-->
-<!--    <meta property="og:url"           content="https://azertypow.github.io/head.project.adface/#/profile" />-->
-<!--    <meta property="og:type"          content="website" />-->
-<!--    <meta property="og:title"         content="profile" />-->
-<!--    <meta property="og:description"   content="get your profile" />-->
-<!--&lt;!&ndash;    <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />&ndash;&gt;-->
-<!--  </head>-->
-<!--  <body>-->
-
-<!--  &lt;!&ndash; Load Facebook SDK for JavaScript &ndash;&gt;-->
-<!--  <div id="fb-root"></div>-->
-<!--  <script>(function(d, s, id) {-->
-<!--    var js, fjs = d.getElementsByTagName(s)[0];-->
-<!--    if (d.getElementById(id)) return;-->
-<!--    js = d.createElement(s); js.id = id;-->
-<!--    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";-->
-<!--    fjs.parentNode.insertBefore(js, fjs);-->
-<!--  }(document, 'script', 'facebook-jssdk'));</script>-->
-
-<!--  &lt;!&ndash; Your share button code &ndash;&gt;-->
-<!--  <div class="fb-share-button"-->
-<!--       data-href="https://azertypow.github.io/head.project.adface/#/profile"-->
-<!--       data-layout="button_count">-->
-<!--  </div>-->
-
-<!--  </body>-->
-<!--  </html>-->
-
-<!--</template>-->

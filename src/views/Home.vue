@@ -41,7 +41,14 @@
           'is-active': (showVideo && !showResult)
         }"
     >
+      <img
+          v-if="snapShot"
+          :src="snapShot"
+          class="v-home__img-render"
+          alt="video snapshot"
+      />
       <video
+          v-if="!snapShot"
           autoplay
           muted
           playsinline
@@ -50,16 +57,11 @@
           ref="videoElement"
       ></video>
       <canvas
+          v-if="!snapShot"
           class="v-home__overlay"
           ref="canvasOverlay"
       />
     </div>
-
-    <img
-        v-if="snapShot"
-        :src="snapShot"
-        alt="video snapshot"
-    />
 
   </div>
 </template>
@@ -76,7 +78,7 @@ import {
   resizeResults,
   TinyFaceDetectorOptions
 } from "face-api.js"
-import {DURATION_PARAMETERS, IImageAnalysisResponse, params} from "@/main"
+import {DURATION_PARAMETERS, getConvertedEmotion, IImageAnalysis, IImageAnalysisResponse, params} from "@/main"
 import ResultView from "@/components/ResultView.vue"
 import {useStore} from "vuex"
 import {MutationTypes} from "@/store"
@@ -94,14 +96,14 @@ export default defineComponent({
       termValidate: false,
       showVideo: false,
       showForm: true,
-      imageProcessAnalysis: null as null | IImageAnalysisResponse,
       snapShot: null as string | null,
-      imageAnalyseResponse: undefined as IImageAnalysisResponse | undefined | null
+      imageAnalyseResponse: undefined as undefined | null | IImageAnalysisResponse
     }
   },
 
   computed: {
     showResult(): boolean {
+      console.log( this.store.state.imageAnalysisResponse )
       return this.store.state.imageAnalysisResponse !== null
     }
   },
@@ -119,13 +121,13 @@ export default defineComponent({
   methods: {
 
     loadModels() {
-      nets.tinyFaceDetector.load("https://azertypow.github.io/head.project.adface/").then(() => {
+      nets.tinyFaceDetector.load(params.webappBaseUrl).then(() => {
         console.info("tinyFaceDetector loaded")
       }).catch(reason => {
         console.log(reason)
       })
 
-      nets.faceLandmark68TinyNet.load("https://azertypow.github.io/head.project.adface/").then(() => {
+      nets.faceLandmark68TinyNet.load(params.webappBaseUrl).then(() => {
         console.info("faceLandmark68TinyNet loaded")
       }).catch(reason => {
         console.log(reason)
@@ -134,38 +136,42 @@ export default defineComponent({
 
     async onPlay(): Promise<any> {
 
-      const videoEl = this.$refs.videoElement as HTMLVideoElement
-      const canvas = this.$refs.canvasOverlay as HTMLCanvasElement
+      const videoEl = this.$refs.videoElement
+      const canvas = this.$refs.canvasOverlay
 
-      if (videoEl.paused
-          || videoEl.ended
-          || !this.isFaceDetectionModelLoaded()
-          || !this.isFaceLandmark68TinyNetModelLoaded()
-      ) {
-        return setTimeout(() => this.onPlay())
-      }
+      if (videoEl instanceof HTMLVideoElement && canvas instanceof HTMLCanvasElement) {
 
-
-      const options = new TinyFaceDetectorOptions({
-        inputSize: 160,
-        scoreThreshold: .5,
-      })
-
-      const result = await detectAllFaces(videoEl, options).withFaceLandmarks(true)
-
-      if (result) {
-        const dims = matchDimensions(canvas, videoEl, true)
-        const resultsResized = resizeResults(result, dims)
-
-        for (const resultResized of resultsResized) {
-          const box = new draw.DrawBox(resultResized.alignedRect.box)
-          box.draw(canvas)
+        if (videoEl.paused
+            || videoEl.ended
+            || !this.isFaceDetectionModelLoaded()
+            || !this.isFaceLandmark68TinyNetModelLoaded()
+        ) {
+          return setTimeout(() => this.onPlay())
         }
 
-        draw.drawFaceLandmarks(canvas, resultsResized)
-      }
 
-      setTimeout(() => this.onPlay())
+        const options = new TinyFaceDetectorOptions({
+          inputSize: 160,
+          scoreThreshold: .5,
+        })
+
+        const result = await detectAllFaces(videoEl, options).withFaceLandmarks(true)
+
+        if (result) {
+          const dims = matchDimensions(canvas, videoEl, true)
+          const resultsResized = resizeResults(result, dims)
+
+          for (const resultResized of resultsResized) {
+            const box = new draw.DrawBox(resultResized.alignedRect.box)
+            box.draw(canvas)
+          }
+
+          draw.drawFaceLandmarks(canvas, resultsResized)
+        }
+
+        setTimeout(() => this.onPlay())
+
+      }
     },
 
     isFaceDetectionModelLoaded() {
@@ -199,9 +205,16 @@ export default defineComponent({
     saveAnalyseResponse() {
       window.setTimeout(() => {
         if (this.imageAnalyseResponse !== undefined) {
-          if (this.imageAnalyseResponse !== null) {
-            this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, this.imageAnalyseResponse)
-            console.log(this.imageAnalyseResponse)
+          if (this.imageAnalyseResponse !== null && this.imageAnalyseResponse.instance_1) {
+
+            const cleanAnalyseResponse: IImageAnalysis = {
+              age:      this.imageAnalyseResponse.instance_1.age,
+              emotion:  getConvertedEmotion(this.imageAnalyseResponse.instance_1.emotion),
+              gender:   this.imageAnalyseResponse.instance_1.gender,
+              race:     this.imageAnalyseResponse.instance_1.race,
+            }
+
+            this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, cleanAnalyseResponse)
             console.log("analyse added")
           } else {
             console.log("oups try again")
@@ -266,12 +279,6 @@ async startImageProcess(): Promise<IImageAnalysisResponse> {
             'Content-Type': 'application/json'
           }
         }
-
-        //   resolve({
-        //     age: "0-10",
-        //     emotion: "angry",
-        //     gender: "Woman",
-        //   })
 
         fetch(
             `${params.baseUrl}/analyze`,
@@ -407,6 +414,17 @@ async startImageProcess(): Promise<IImageAnalysisResponse> {
     transition: opacity 1s ease-in-out;
     opacity: 1;
   }
+}
+
+.v-home__img-render {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
 }
 
 .v-home__video-render {

@@ -39,14 +39,14 @@ export default defineComponent({
   background: var(--site-color--background);
 }
 
-.v-about__content{
+.v-about__content {
   max-width: 37em;
   padding-top: calc(100vh / 7 * 2);
 }
 
 .v-term__bg {
   pointer-events: none;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

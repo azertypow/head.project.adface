@@ -36,7 +36,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import {
-  IImageAnalysisResponse,
+  IImageAnalysis,
 } from "@/main"
 import {useStore} from "vuex"
 
@@ -77,7 +77,7 @@ export default defineComponent({
       return randomSentence_start + " " + randomSentence_end
     },
 
-    imageAnalysisResponse(): IImageAnalysisResponse {
+    imageAnalysisResponse(): IImageAnalysis {
       return this.store.state.imageAnalysisResponse
     }
   },
