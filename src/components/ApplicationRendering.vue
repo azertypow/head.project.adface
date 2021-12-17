@@ -78,6 +78,7 @@ export default defineComponent({
     },
 
     imageAnalysisResponse(): IImageAnalysis {
+      console.log( this.store.state.imageAnalysisResponse )
       return this.store.state.imageAnalysisResponse
     }
   },

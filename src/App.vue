@@ -5,12 +5,14 @@
       }"
       class="v-app">
 
-    <div
-        v-if="store.state.showProfile"
-        class="v-app__profile"
-    >
-      <ApplicationRendering></ApplicationRendering>
-    </div>
+    <transition name="view" mode="out-in"  >
+      <div
+          v-if="store.state.showProfile"
+          class="v-app__profile"
+      >
+        <ApplicationRendering></ApplicationRendering>
+      </div>
+    </transition>
 
     <router-view v-slot="{ Component }">
       <transition name="view" mode="out-in"  >

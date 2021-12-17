@@ -78,7 +78,14 @@ import {
   resizeResults,
   TinyFaceDetectorOptions
 } from "face-api.js"
-import {DURATION_PARAMETERS, getConvertedEmotion, IImageAnalysis, IImageAnalysisResponse, params} from "@/main"
+import {
+  DURATION_PARAMETERS,
+  getConvertedEmotion,
+  getConvertedRace,
+  IImageAnalysis,
+  IImageAnalysisResponse,
+  params
+} from "@/main"
 import ResultView from "@/components/ResultView.vue"
 import {useStore} from "vuex"
 import {MutationTypes} from "@/store"
@@ -214,7 +221,7 @@ export default defineComponent({
               age:      this.imageAnalyseResponse.instance_1.age,
               emotion:  getConvertedEmotion(this.imageAnalyseResponse.instance_1.emotion),
               gender:   this.imageAnalyseResponse.instance_1.gender,
-              race:     this.imageAnalyseResponse.instance_1.race,
+              race:     getConvertedRace(this.imageAnalyseResponse.instance_1.race),
             }
 
             this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, cleanAnalyseResponse)

@@ -17,6 +17,7 @@ export type IImageAnalysisResponseGender  = 'Man' | "Woman"
 export type IImageAnalysisResponseAge     = number //
 export type IImageAnalysisResponseEmotion = "angry" | "disgust" | "fear" | "happy" | "neutral" | "sad" | "surprise"
 export type IImageAnalysisResponseRace    = "asian" | "black" | "indian" | "latino hispanic" | "middle eastern" | "white"
+
 export type IImageAnalyseResponseEmotionPercent = {
   angry: number;
   disgust: number;
@@ -27,6 +28,18 @@ export type IImageAnalyseResponseEmotionPercent = {
   surprise: number;
   [key: string]: number;
 }
+
+export type IImageAnalyseResponseRacePercent = {
+  angry: number;
+  disgust: number;
+  fear: number;
+  happy: number;
+  neutral: number;
+  sad: number;
+  surprise: number;
+  [key: string]: number;
+}
+
 
 export interface IImageAnalysis {
   gender:     IImageAnalysisResponseGender
@@ -40,7 +53,7 @@ export interface IImageAnalysisResponse {
     gender:     IImageAnalysisResponseGender
     age:        IImageAnalysisResponseAge
     emotion:    IImageAnalyseResponseEmotionPercent
-    race:       IImageAnalysisResponseRace
+    race:       IImageAnalyseResponseRacePercent
   } | undefined
 }
 
@@ -67,10 +80,6 @@ export function getAdsFolderName(imageAnalysisResponse: IImageAnalysis): string[
   const emotion =       imageAnalysisResponse.emotion
   const ageClassified = getAgeClassified(imageAnalysisResponse.age)
   const genre =         imageAnalysisResponse.gender
-
-  console.log(emotion)
-  console.log(ageClassified)
-  console.log(genre)
 
   return imgThree[genre][ageClassified][getEmotionClassified(emotion)]
 }
@@ -108,9 +117,27 @@ export function getConvertedEmotion(emotionPercent: IImageAnalyseResponseEmotion
     }
   }
 
-  console.log(emotionPercent)
-  console.log(stringToReturn)
   return stringToReturn || "neutral"
+}
+
+export function getConvertedRace(racePercent: IImageAnalyseResponseRacePercent): IImageAnalysisResponseRace {
+  let stringToReturn: IImageAnalysisResponseRace | null = null
+  let mostHighterEmotionValue = 0
+
+  for (let racePercentKey in racePercent) {
+    if(racePercent.hasOwnProperty(racePercentKey)) {
+      if(stringToReturn === null) {
+        mostHighterEmotionValue = racePercent[racePercentKey]
+        stringToReturn = racePercentKey as IImageAnalysisResponseRace
+      }
+      else if(racePercent[racePercentKey] >= mostHighterEmotionValue) {
+        mostHighterEmotionValue = racePercent[racePercentKey]
+        stringToReturn = racePercentKey as IImageAnalysisResponseRace
+      }
+    }
+  }
+
+  return stringToReturn || "white"
 }
 
 export const imgThree = {
