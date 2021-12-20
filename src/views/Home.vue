@@ -14,7 +14,7 @@
         v-if="showForm"
     >
       <div class="v-home__text mmd--with-padding mmd--child-rm-margin">
-        <p>Swiss Digital Initiative presents ADface, an&nbsp;experience about digital trust, and&nbsp;how ″facial&nbsp;analysis technologies″ are&nbsp;deployed in targeted&nbsp;advertising.</p>
+        <p>Swiss Digital Initiative presents ADface, an&nbsp;experience about digital trust, and&nbsp;how ″facial analysis technologies″ are deployed in targeted&nbsp;advertising.</p>
       </div>
 
       <div
@@ -390,8 +390,12 @@ async startImageProcess(): Promise<IImageAnalysisResponse> {
   background: var(--site-color--secondary);
   padding: var(--unit);
   position: relative;
-  width: 75%;
+  width: 100%;
   max-width: 30em;
+
+  @media all and (min-width: 800px) {
+    width: 75%;
+  }
 }
 
 .v-home__check-box {

@@ -21,12 +21,12 @@
           class="v-application-rendering__layout__txt"
       >
         You were targeted with these ads because you are {{raceSentence}} {{imageAnalysisResponse.gender.toLowerCase()}} of {{imageAnalysisResponse.age}} years old.
-        <br>You are {{emotion}} and look {{sentence}}.
+        <br>You are {{emotion}}, and you look {{sentence}}.
       </div>
 
       <div
           class="v-application-rendering__layout__footer"
-      >adface.swiss-digital-initiative.org</div>
+      >return to <a href="https://staging.adface.a-ll.ch/#/" >adface.swiss-digital-initiative.org</a></div>
 
       <div
           class="v-application-rendering__layout__share"
@@ -171,7 +171,8 @@ export default defineComponent({
 
 .v-application-rendering__layout__id {
   width: 50%;
-  text-align: right;
+  text-align: left;
+  transform: translate(0px, -6px);
 }
 
 .v-application-rendering__layout__txt {
@@ -182,13 +183,13 @@ export default defineComponent({
 
 .v-application-rendering__layout__footer {
   padding-top: var(--text-line-height);
-  width: 66.66666%;
+  width: calc(100% - 150px);
 }
 
 .v-application-rendering__layout__share {
   position: absolute;
-  bottom: 0;
-  right: 5px;
+  bottom: calc( var(--text-line-height) - 5px);
+  right: var(--text-line-height);
   display: flex;
   flex-grow: 1;
   flex-direction: row;
