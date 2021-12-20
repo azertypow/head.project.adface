@@ -34,17 +34,20 @@
               <div
                   class="v-application-rendering__share-link"
                   @click="shareClicked"
+                  title="Copy to Clipoard"
               ><img src="../assets/copy_paste.svg" alt="copy sharing"></div>
 
               <a
                   class="v-application-rendering__share-link"
                   target="_blank"
+                  title="Share on Facebook"
                   :href="getUrlToShare('facebook')"
               ><img src="../assets/facebook.svg" alt="facebook sharing"></a>
 
               <a
                   class="v-application-rendering__share-link"
                   target="_blank"
+                  title="Share on Twitter"
                   :href="getUrlToShare('twitter')"
               ><img src="../assets/twitter.svg" alt="twitter sharing"></a>
       </div>
