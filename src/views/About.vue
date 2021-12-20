@@ -62,6 +62,7 @@ export default defineComponent({
 }
 
 .v-about__content {
+  position: relative;
   max-width: 37em;
   padding-top: calc(100vh / 7 * 2);
 }

@@ -32,8 +32,14 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-term {
-  height: 100%;
+  position: fixed;
   padding-left: var(--left-padding);
+  bottom: var(--nav-height);
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--nav-height) );
+  z-index: 10000;
+  background: var(--site-color--background);
 }
 
 .v-term__content {
