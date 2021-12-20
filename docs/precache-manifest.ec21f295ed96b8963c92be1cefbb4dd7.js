@@ -2389,443 +2389,443 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "9252b2aff6e1b26b736862d051ba3a56",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000001.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000001.jpg"
   },
   {
     "revision": "a4a2494c999717699eb98ccd4807e34b",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000002.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000002.jpg"
   },
   {
     "revision": "fc5aef6e7f8e1c49bfb3867dd1e2d6b6",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000003.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000003.jpg"
   },
   {
     "revision": "887f34ece2b0849151708a607eeee03b",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000004.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000004.jpg"
   },
   {
     "revision": "43c1d7f9e4e30a598d9616b18ce67b80",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000005.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000005.jpg"
   },
   {
     "revision": "8795ead9790e46898bf417453d7eab2c",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000006.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000006.jpg"
   },
   {
     "revision": "ea3f977fbe508283609af46ca0a32409",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000007.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000007.jpg"
   },
   {
     "revision": "4221234e209de00e121266f5d37ea159",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000008.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000008.jpg"
   },
   {
     "revision": "952882bc3d6406aad6f3267ba5b3f7cd",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000009.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000009.jpg"
   },
   {
     "revision": "b6cf1f591e466841e34430e1f1c0e0e6",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000010.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000010.jpg"
   },
   {
     "revision": "796a1c7eaf612f6d947cd39fc89c09f2",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000011.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000011.jpg"
   },
   {
     "revision": "99898848c97fd393315f48005fbe9218",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000012.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000012.jpg"
   },
   {
     "revision": "1e4ec282f637f997dbbcac04266d7388",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000013.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000013.jpg"
   },
   {
     "revision": "e07901cb8722795ba317de77967fbe3a",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000014.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000014.jpg"
   },
   {
     "revision": "ce63a54653d035e90f8777ff36a94a87",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000015.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000015.jpg"
   },
   {
     "revision": "e577b6a02353e55ce5fcd23bf2ba8687",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000016.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000016.jpg"
   },
   {
     "revision": "9edfca11d8377a684ebf95b838e37629",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000017.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000017.jpg"
   },
   {
     "revision": "cc849328ee5cf81d6eac835aeef6be90",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000018.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000018.jpg"
   },
   {
     "revision": "c9592dda7420953e57489fd1c55d73dc",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000019.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000019.jpg"
   },
   {
     "revision": "575d9876451fcabe0547f31bc536bb62",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000020.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000020.jpg"
   },
   {
     "revision": "10a43d3410954de840f160a6c27d7371",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000021.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000021.jpg"
   },
   {
     "revision": "e8bf3d1825d0bbb1fdf05d554d3d60d3",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000022.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000022.jpg"
   },
   {
     "revision": "7089b50c95afac67438cdccd348694d1",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000023.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000023.jpg"
   },
   {
     "revision": "0a095afb6f381374cef1730acf8d447b",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000024.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000024.jpg"
   },
   {
     "revision": "2919028abe434a60ceba93bf5896a330",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000025.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000025.jpg"
   },
   {
     "revision": "11dff44b8e9f1507d97987e199873c7c",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000026.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000026.jpg"
   },
   {
     "revision": "5b730f24acf9d63d30cd2a961d9fa046",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000027.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000027.jpg"
   },
   {
     "revision": "266f4472ac3f62701dc6bd6c0a7c5ae7",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000028.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000028.jpg"
   },
   {
     "revision": "cea32c7f8599e6a190a6042f5ca8f5f5",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000029.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000029.jpg"
   },
   {
     "revision": "4d085d93654b34f13e27b686a627368c",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000030.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000030.jpg"
   },
   {
     "revision": "31c2fa43184b3e54443d637d51048384",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000031.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000031.jpg"
   },
   {
     "revision": "c1a25d33b64fb2ba788eb3c9404e55f3",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000032.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000032.jpg"
   },
   {
     "revision": "f5f2f9fa5128ce66995d41ee42f6de35",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000033.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000033.jpg"
   },
   {
     "revision": "707bb96bfd4a5f510f08150b537e0236",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000034.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000034.jpg"
   },
   {
     "revision": "29a6c65ce42d15398c49b3841edcb27d",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000035.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000035.jpg"
   },
   {
     "revision": "a636eeb938a1854ad721c0049c29ffb8",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000036.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000036.jpg"
   },
   {
     "revision": "2e36f4225c5e470404b525d333384530",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000037.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000037.jpg"
   },
   {
     "revision": "ea86131da9e85e661bcab1f61307e612",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000038.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000038.jpg"
   },
   {
     "revision": "1433da6a2f72a890d1d9a4a8e231a2fc",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000039.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000039.jpg"
   },
   {
     "revision": "eaa9d16a3db63320e414e4a4a573f8b5",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000040.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000040.jpg"
   },
   {
     "revision": "00d256765826ba52362332783ce3d5aa",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000041.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000041.jpg"
   },
   {
     "revision": "3fb0329553519fbf1e78897fb6d12a56",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000042.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000042.jpg"
   },
   {
     "revision": "1684b35c119f761d9b924bb6e6916388",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000043.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000043.jpg"
   },
   {
     "revision": "dc6aaceb67ec7e83198000974956ab85",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000044.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000044.jpg"
   },
   {
     "revision": "da889ec43daba424d27be7f7d3e12991",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000045.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000045.jpg"
   },
   {
     "revision": "5175ac085664b4329f6289105dc3d30a",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000046.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000046.jpg"
   },
   {
     "revision": "d9c253b4202f95ec44229966fc39ddbb",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000047.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000047.jpg"
   },
   {
     "revision": "cdab2e51baccda7265f084be5db13049",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000048.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000048.jpg"
   },
   {
     "revision": "4458428e3375336008129533c3599486",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000049.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000049.jpg"
   },
   {
     "revision": "7b73653b4d94b8712e98e1609eac1b95",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000050.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000050.jpg"
   },
   {
     "revision": "497b2403c8ee9f15a99fb0331be3dd69",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000051.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000051.jpg"
   },
   {
     "revision": "52c1b12428d7ba901adf08b25b94592c",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000052.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000052.jpg"
   },
   {
     "revision": "08162da7a3837a52b676604e6fcb3f18",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000053.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000053.jpg"
   },
   {
     "revision": "22d271153be9427fe0acb33f011421b2",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000054.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000054.jpg"
   },
   {
     "revision": "97544a0716a4f411de6b3bee3544a3b1",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000055.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000055.jpg"
   },
   {
     "revision": "9f272ced3751ba77feff889530b79608",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000056.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000056.jpg"
   },
   {
     "revision": "560b97e120fd06d2d91bceea7bfb94ef",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000057.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000057.jpg"
   },
   {
     "revision": "fbe0b041391678477d253b6676f3d8c7",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000058.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000058.jpg"
   },
   {
     "revision": "186ffb1588baad1ea6a8f6fe380ac838",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000059.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000059.jpg"
   },
   {
     "revision": "7c20905e121447cd997ebbb2b3385e5b",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000060.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000060.jpg"
   },
   {
     "revision": "cccfc3f061c15f855b116fc8fbd545a5",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000061.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000061.jpg"
   },
   {
     "revision": "00f20384b96ff169a91096ff25f90c5e",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000062.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000062.jpg"
   },
   {
     "revision": "67cd16a188ce7218d10f5332dd6bf3a3",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000063.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000063.jpg"
   },
   {
     "revision": "8ff7a2aeac2e21202d77c6ebf9df33ef",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000064.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000064.jpg"
   },
   {
     "revision": "a5011abf31ff5ca53bc4aded9f6eb653",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000065.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000065.jpg"
   },
   {
     "revision": "43240a73c705a08e13f9cf4eb31d0ada",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000066.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000066.jpg"
   },
   {
     "revision": "dc215a48673194c3adce2b30fa4b34ca",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_0-10_happy/000067.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07a-output_man_20-30_happy/000067.jpg"
   },
   {
     "revision": "5a460f941531827a49bb54b7c141e23f",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000001.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000001.jpg"
   },
   {
     "revision": "cace6c471dc7dabdf39c964e7c6cbd32",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000002.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000002.jpg"
   },
   {
     "revision": "ea28fef84b6ce59534d387e04000ba1b",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000003.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000003.jpg"
   },
   {
     "revision": "46b3c4a7868db4dbe320420ecd6bb0f5",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000004.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000004.jpg"
   },
   {
     "revision": "103718b74d26b2e23f5c2337f4494246",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000005.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000005.jpg"
   },
   {
     "revision": "beca5a0e008cdd28458132c7777ba1b2",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000006.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000006.jpg"
   },
   {
     "revision": "4914a31bf18feef7476c379f4c11ad5a",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000007.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000007.jpg"
   },
   {
     "revision": "d4aa73c412939d101a72b873af863367",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000008.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000008.jpg"
   },
   {
     "revision": "21f98abc905e8b6adc7df710390bd510",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000009.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000009.jpg"
   },
   {
     "revision": "73e339c1c471aefd124115f564c96bf0",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000010.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000010.jpg"
   },
   {
     "revision": "1b74da619cf36c92b0f69f864bd36f59",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000011.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000011.jpg"
   },
   {
     "revision": "d75da9ff2664d2f73ba1af165e0cce0c",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000012.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000012.jpg"
   },
   {
     "revision": "fade16b71c94bcfacb99bd59c00f9daa",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000013.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000013.jpg"
   },
   {
     "revision": "d6ab3cdf9d9b926228c097808c97fa00",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000014.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000014.jpg"
   },
   {
     "revision": "083a83d4bbd1c69ea8c360984e594728",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000015.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000015.jpg"
   },
   {
     "revision": "8bcc084c6e0d9f962defc417773bb0a2",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000016.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000016.jpg"
   },
   {
     "revision": "f268cc59b957dd0378e63bb7f171411d",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000017.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000017.jpg"
   },
   {
     "revision": "c489ae00d7fcb60e0d6646aab660b427",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000018.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000018.jpg"
   },
   {
     "revision": "69c12e4acd658daf93b45e1ad26937ab",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000019.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000019.jpg"
   },
   {
     "revision": "405f2d499872b01103448819d637ecd5",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000020.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000020.jpg"
   },
   {
     "revision": "39ad0e62a63182abe37c68758e80ff51",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000021.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000021.jpg"
   },
   {
     "revision": "41e2ff8fbe5c109520bb54e561dad395",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000022.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000022.jpg"
   },
   {
     "revision": "35b4b6bb9c1f04ef3f8205d7f9e1a196",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000023.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000023.jpg"
   },
   {
     "revision": "ea30d1c25f516edc5338f97930c5db61",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000024.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000024.jpg"
   },
   {
     "revision": "455d6c22c0fce2196dc3b3f545238893",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000025.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000025.jpg"
   },
   {
     "revision": "fcee274c977feea6aabd42decb9ca22f",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000026.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000026.jpg"
   },
   {
     "revision": "d4441468bccf79af45106665014d86d0",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000027.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000027.jpg"
   },
   {
     "revision": "23148d766d8c49c7f6c12be60c1070da",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000028.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000028.jpg"
   },
   {
     "revision": "4205409e198e628cdb619b6cdda47c14",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000029.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000029.jpg"
   },
   {
     "revision": "6f68269632110bc746f31910e85a9854",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000030.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000030.jpg"
   },
   {
     "revision": "393ea2e48291a1c6822e314027c5b27c",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000031.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000031.jpg"
   },
   {
     "revision": "02ffa1ac1617f3c500044bfccb5f3a99",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000032.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000032.jpg"
   },
   {
     "revision": "18968664348ae764b82940148cfc5635",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000033.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000033.jpg"
   },
   {
     "revision": "bb3d8315410aaf7cec690f9445ed1453",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000034.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000034.jpg"
   },
   {
     "revision": "55db195663fa159eb209628727db8421",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000035.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000035.jpg"
   },
   {
     "revision": "7d6c7f2d92c1b2a696ce6a6ad67fd8fe",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000036.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000036.jpg"
   },
   {
     "revision": "6e8ca1e75a4e61c237f9097a91e9b9af",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000037.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000037.jpg"
   },
   {
     "revision": "2eb1a746ce5c84e5e9011f235e9a031d",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000038.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000038.jpg"
   },
   {
     "revision": "4b823352de41b2459dbab3b6e23809fb",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000039.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000039.jpg"
   },
   {
     "revision": "1df19365f7dd6ff6c08d19fa0981a5d9",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000040.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000040.jpg"
   },
   {
     "revision": "5304ef4529ead97b5898c7b9f758c9a6",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000041.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000041.jpg"
   },
   {
     "revision": "77cd22f9b2e2876ad71085e3b8740442",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000042.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000042.jpg"
   },
   {
     "revision": "114739d779c956688dea9f53679b79de",
-    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_0-10_happy/000043.jpg"
+    "url": "https://azertypow.github.io/head.project.adface/ads/07b-output_man_20-30_happy/000043.jpg"
   },
   {
     "revision": "60a855b65dfbcbef2beef6460d7a0675",
@@ -16340,20 +16340,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/ads/42b-output_woman_60_unhappy/000042.jpg"
   },
   {
-    "revision": "c2b368c64e3a48548559",
-    "url": "https://azertypow.github.io/head.project.adface/css/app.1466cabd.css"
+    "revision": "b8ef14beacdde8407198",
+    "url": "https://azertypow.github.io/head.project.adface/css/app.eaa4780d.css"
   },
   {
-    "revision": "50a1f1dd06c1e46a44ce",
-    "url": "https://azertypow.github.io/head.project.adface/css/chunk-78fceb78.911398b8.css"
+    "revision": "e9cd1c46420be4b39274",
+    "url": "https://azertypow.github.io/head.project.adface/css/chunk-07166b3a.16dcf80f.css"
   },
   {
-    "revision": "44fb4a829f4ceb151812",
-    "url": "https://azertypow.github.io/head.project.adface/css/chunk-7c6e69ce.e01664ed.css"
+    "revision": "ba3643f329c4bf9d0645",
+    "url": "https://azertypow.github.io/head.project.adface/css/chunk-61697ada.e250f104.css"
   },
   {
-    "revision": "e2df321c984849a8855f",
-    "url": "https://azertypow.github.io/head.project.adface/css/chunk-bc632b8e.ad90816f.css"
+    "revision": "26c5362cadde26ba4d46",
+    "url": "https://azertypow.github.io/head.project.adface/css/chunk-7a448806.2a8147b8.css"
   },
   {
     "revision": "47047fee26557b55d985952bdfc6cba1",
@@ -16372,8 +16372,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/img/copy_paste.d8520ba8.svg"
   },
   {
-    "revision": "d5ac953a4cf840b0998da2c944b49daf",
-    "url": "https://azertypow.github.io/head.project.adface/img/discover_profile_2.d5ac953a.svg"
+    "revision": "a01b95edff78146d5fa0443e3f96e2e9",
+    "url": "https://azertypow.github.io/head.project.adface/img/discover_profile_2.a01b95ed.svg"
   },
   {
     "revision": "780c06fd9d90d21057d455e79013a213",
@@ -16384,24 +16384,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://azertypow.github.io/head.project.adface/img/twitter.9e0425c6.svg"
   },
   {
-    "revision": "e2235bcf1ff8b93401a59ebd04b8de30",
+    "revision": "4f6fb4612d4f02a5d7061d39de7c2994",
     "url": "https://azertypow.github.io/head.project.adface/index.html"
   },
   {
-    "revision": "c2b368c64e3a48548559",
-    "url": "https://azertypow.github.io/head.project.adface/js/app.db0adb03.js"
+    "revision": "b8ef14beacdde8407198",
+    "url": "https://azertypow.github.io/head.project.adface/js/app.d4392077.js"
   },
   {
-    "revision": "50a1f1dd06c1e46a44ce",
-    "url": "https://azertypow.github.io/head.project.adface/js/chunk-78fceb78.14806ff8.js"
+    "revision": "e9cd1c46420be4b39274",
+    "url": "https://azertypow.github.io/head.project.adface/js/chunk-07166b3a.7caec28a.js"
   },
   {
-    "revision": "44fb4a829f4ceb151812",
-    "url": "https://azertypow.github.io/head.project.adface/js/chunk-7c6e69ce.7d165a18.js"
+    "revision": "ba3643f329c4bf9d0645",
+    "url": "https://azertypow.github.io/head.project.adface/js/chunk-61697ada.a67dd9fd.js"
   },
   {
-    "revision": "e2df321c984849a8855f",
-    "url": "https://azertypow.github.io/head.project.adface/js/chunk-bc632b8e.1b37b292.js"
+    "revision": "26c5362cadde26ba4d46",
+    "url": "https://azertypow.github.io/head.project.adface/js/chunk-7a448806.7653968d.js"
   },
   {
     "revision": "1e553cd5dcaf805f8363",
