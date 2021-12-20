@@ -191,7 +191,7 @@ export default defineComponent({
     },
 
     async validateTerm() {
-      this.termValidate = !this.termValidate
+      this.termValidate = true
       this.showVideo = true
 
       window.setTimeout(async () => {
@@ -203,6 +203,10 @@ export default defineComponent({
           console.log("result ok")
         }).catch(reason => {
           console.error("image process error: \n" + reason)
+
+          this.store.commit(MutationTypes.SHOW_DIALOGQUE, true)
+          this.termValidate = false
+          this.showForm = true
         })
 
         this.saveAnalyseResponse()
@@ -225,7 +229,7 @@ export default defineComponent({
             this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, cleanAnalyseResponse)
             console.log("analyse added")
           } else {
-            console.log("oups try again")
+            console.error("saveAnalyseResponse error")
             // try again
 
             // -----

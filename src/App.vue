@@ -23,11 +23,24 @@
     <navigation/>
 
     <div
-        class="v-app__mobile-msg"
+        class="v-app__mobile-msg v-app__dialogue-message"
     >
-      <p>This experience only functions as a desktop version.<br
-      >Try it on your computer!</p>
+      <p>This experience only functions as a desktop&nbsp;version.<br
+      >Try it on your&nbsp;computer!</p>
     </div>
+
+    <div
+        class="v-app__dialogue-message"
+        v-if="store.state.showDialogue"
+    >
+      <p>We can't detect your face. Make sure you put your whole head in front of your&nbsp;webcam.<br
+        ><span
+          @click="closeDialogue"
+          class="mmd-link"
+      >I understood, back to the&nbsp;experience.</span>
+      </p>
+    </div>
+
   </div>
 </template>
 
@@ -35,7 +48,10 @@
 import Navigation from "@/components/navigation.vue"
 import {useStore} from "vuex"
 import ApplicationRendering from "@/components/ApplicationRendering.vue"
-export default {
+import {MutationTypes} from "@/store"
+import {defineComponent} from "vue"
+
+export default defineComponent({
   components: {ApplicationRendering, Navigation},
 
   data(){
@@ -46,15 +62,16 @@ export default {
 
   computed: {
     aboutIsOpen(): boolean {
-      //@ts-ignore
       return this.$route.name === "About"
     },
   },
 
   methods: {
-
+    closeDialogue() {
+      this.store.commit(MutationTypes.SHOW_DIALOGQUE, false)
+    }
   },
-}
+})
 </script>
 
 <style lang="scss">
@@ -100,7 +117,7 @@ export default {
   z-index: 900000000;
 }
 
-.v-app__mobile-msg {
+.v-app__dialogue-message {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -110,16 +127,18 @@ export default {
   background: rgba(0, 0, 0, 0.9);
   z-index: 9000000000;
 
-   > p {
-     color: var(--site-color--background);
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     width: 100%;
-     max-width: 300px;
+  > p {
+    color: var(--site-color--background);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 32rem;
   }
+}
 
+.v-app__mobile-msg {
   @media all and (min-width: 680px) {
     display: none;
   }
