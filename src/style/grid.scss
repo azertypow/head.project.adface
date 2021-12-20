@@ -23,6 +23,10 @@
 .mmd--with-padding {
   box-sizing: border-box;
   padding: var(--gutter);
+
+  &.mmd--with-padding--bottom-xl {
+    padding-bottom: calc(var(--gutter) * 2);
+  }
 }
 
 .mmd--no-margin {

@@ -86,36 +86,51 @@ export default defineComponent({
       this.store.commit(MutationTypes.SHOW_PROFILE, true)
     },
 
+    addImageElement(imagesContainer: HTMLDivElement, src: string) {
+      const imgElement = document.createElement("img")
+      const imgXCorrection        = 65; // see render in browser
+      const imgYCorrection_top    = 170; // see render in browser
+      const imgYCorrection_bottom = 210; // see render in browser
+
+      const xPos = randomIntFromInterval( imgXCorrection, window.innerWidth - imgXCorrection )
+      const yPos = randomIntFromInterval( imgYCorrection_top, window.innerHeight - imgYCorrection_bottom )
+
+      imgElement.src = src;
+      imgElement.style.left = `${xPos}px`
+      imgElement.style.top  = `${yPos}px`
+      imagesContainer.appendChild(imgElement)
+    },
+
     placeImageInView(indexOfListOfImages: number, listOfImages: string[]) {
 
       const imagesContainer = this.$refs.imagesContainer
 
       if(imagesContainer instanceof HTMLDivElement) {
 
-        const imgElement = document.createElement("img")
-        const imgXCorrection        = 65; // see render in browser
-        const imgYCorrection_top    = 170; // see render in browser
-        const imgYCorrection_bottom = 210; // see render in browser
+        this.addImageElement(
+            imagesContainer,
+            params.webappBaseUrl + "/ads/" + getAdsFolderName(this.store.state.imageAnalysisResponse)[0] + '/' + listOfImages[indexOfListOfImages]
+        )
 
-        const xPos = randomIntFromInterval( imgXCorrection, window.innerWidth - imgXCorrection )
-        const yPos = randomIntFromInterval( imgYCorrection_top, window.innerHeight - imgYCorrection_bottom )
+        window.setTimeout(() => {
+          this.addImageElement(
+              imagesContainer,
+              params.webappBaseUrl + "/ads/" + getAdsFolderName(this.store.state.imageAnalysisResponse)[1] + '/' + listOfImages[indexOfListOfImages]
+          )
 
-        imgElement.src = params.webappBaseUrl + "/ads/" + getAdsFolderName(this.store.state.imageAnalysisResponse)[randomIntFromInterval(0, 1)] + '/' + listOfImages[indexOfListOfImages]
-        imgElement.style.left = `${xPos}px`
-        imgElement.style.top  = `${yPos}px`
-        imagesContainer.appendChild(imgElement)
+          indexOfListOfImages++
 
-        indexOfListOfImages++
+          if (indexOfListOfImages < listOfImages.length) window.setTimeout(() => {
+            this.placeImageInView(indexOfListOfImages, this.listOfImages)
+          }, DURATION_PARAMETERS.addsInterval)
 
-        if (indexOfListOfImages < listOfImages.length) window.setTimeout(() => {
-          this.placeImageInView(indexOfListOfImages, this.listOfImages)
+          else {
+            window.setTimeout(() => {
+              this.status = "ended"
+            }, DURATION_PARAMETERS.beforeShowingShareProfile)
+          }
         }, DURATION_PARAMETERS.addsInterval)
 
-        else {
-          window.setTimeout(() => {
-            this.status = "ended"
-          }, DURATION_PARAMETERS.beforeShowingShareProfile)
-        }
       }
     },
 

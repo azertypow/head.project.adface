@@ -30,13 +30,13 @@ export type IImageAnalyseResponseEmotionPercent = {
 }
 
 export type IImageAnalyseResponseRacePercent = {
-  angry: number;
-  disgust: number;
-  fear: number;
-  happy: number;
-  neutral: number;
-  sad: number;
-  surprise: number;
+  "East Asian": number,
+  "Southeast Asian": number,
+  "Indian": number,
+  "Black": number,
+  "White": number,
+  "Middle-Eastern": number,
+  "Latino-Hispanic": number,
   [key: string]: number;
 }
 
@@ -63,7 +63,7 @@ export function randomIntFromInterval(min: number, max: number) { // min and max
 
 export const DURATION_PARAMETERS = {
   agreeAndCamera:             2_500, //ms
-  cameraDuration:             5_000, //ms
+  cameraDuration:             2_500, //ms
   addsInterval:               500, //ms
   beforeShowingShareProfile:  1_000, //ms
 }

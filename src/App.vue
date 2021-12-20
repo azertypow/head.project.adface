@@ -1,7 +1,7 @@
 <template>
   <div
       :class="{
-      'small-nav': aboutIsOpen || this.$route.path === '/term'
+      'small-nav': aboutIsOpen || this.$route.name === 'Term'
       }"
       class="v-app">
 
@@ -20,9 +20,7 @@
       </transition>
     </router-view>
 
-    <navigation
-        v-if="this.$route.path !== '/profile'"
-    />
+    <navigation/>
   </div>
 </template>
 
@@ -42,7 +40,7 @@ export default {
   computed: {
     aboutIsOpen(): boolean {
       //@ts-ignore
-      return this.store.state.aboutIsOpen
+      return this.$route.name === "About"
     },
   },
 
