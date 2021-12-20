@@ -36,7 +36,7 @@
 
   --profile-width: 420px;
 
-  --min-width: 780px; // synych with html media query scroll auto
+  --min-width: 680px; // synch with .v-app__mobile-msg ellement display
 
   @media all and (min-width: 800px){
     --video-size: 33.33333vw;

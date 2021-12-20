@@ -21,6 +21,13 @@
     </router-view>
 
     <navigation/>
+
+    <div
+        class="v-app__mobile-msg"
+    >
+      <p>This experience only functions as a desktop version.<br
+      >Try it on your computer!</p>
+    </div>
   </div>
 </template>
 
@@ -60,6 +67,7 @@ export default {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  min-width: var(--min-width);
 }
 
 // page transition
@@ -90,6 +98,31 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 900000000;
+}
+
+.v-app__mobile-msg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9000000000;
+
+   > p {
+     color: var(--site-color--background);
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 100%;
+     max-width: 300px;
+  }
+
+  @media all and (min-width: 680px) {
+    display: none;
+  }
 }
 
 </style>

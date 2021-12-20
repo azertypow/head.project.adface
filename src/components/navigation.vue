@@ -70,6 +70,7 @@ export default defineComponent({
   left: 0;
   display: flex;
   justify-content: space-between;
+  min-width: var(--min-width);
 }
 
 .v-navigation__left {
