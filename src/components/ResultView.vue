@@ -109,7 +109,7 @@ export default defineComponent({
 
         this.addImageElement(
             imagesContainer,
-            params.webappBaseUrl + "ads/" + getAdsFolderName(this.store.state.imageAnalysisResponse)[0] + '/' + listOfImages[indexOfListOfImages]
+            params.webappBaseUrl + "/ads/" + getAdsFolderName(this.store.state.imageAnalysisResponse)[0] + '/' + listOfImages[indexOfListOfImages]
         )
 
         window.setTimeout(() => {
