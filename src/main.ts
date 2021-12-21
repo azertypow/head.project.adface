@@ -7,7 +7,7 @@ import router from './router'
 import store from './store'
 
 export const params = {
-  apiBaseUrl: "https://head-deepface-server-17164.nodechef.com/analyze",
+  apiBaseUrl: "https://head-deepface-server-17164.nodechef.com",
   webappBaseUrl: process.env.BASE_URL || "/"
 }
 
