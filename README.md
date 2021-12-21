@@ -1,4 +1,4 @@
-# adface
+# ADface
 
 Project use NodeJS v12.18.3
 You can use Node Version Manager [nvm](https://github.com/nvm-sh/nvm)

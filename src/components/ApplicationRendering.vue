@@ -26,7 +26,8 @@
 
       <div
           class="v-application-rendering__layout__footer"
-      >return to <a href="https://staging.adface.a-ll.ch/#/" >adface.swiss-digital-initiative.org</a></div>
+      >Return to <br
+      ><a href="https://staging.adface.a-ll.ch" target="_blank" >adface.swiss-digital-initiative.org</a></div>
 
       <div
           class="v-application-rendering__layout__share"
@@ -119,11 +120,11 @@ export default defineComponent({
 
     getUrlToShare(get: null | "facebook" | "twitter"): string {
 
-      const twitterText     = `try AdFace`
-      const twitterHashtags = 'webapp, AI'
+      const twitterText     = `Try ADface on `
+      const twitterHashtags = 'deepface,AI,headmediadesign'
 
       if (get === "twitter")
-        return `https://twitter.com/intent/tweet?text=${twitterText}&url=${params.webappBaseUrl}&hashtags=${twitterHashtags}`
+        return `https://twitter.com/intent/tweet?text=${twitterText}&url=${params.webappBaseUrl}&hashtags=${twitterHashtags}&via=sdi_foundation`
 
       if (get === "facebook")
         return `https://www.facebook.com/sharer/sharer.php?u=${params.webappBaseUrl}`
