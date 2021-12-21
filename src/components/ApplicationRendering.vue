@@ -21,7 +21,7 @@
           class="v-application-rendering__layout__txt"
       >
         You were targeted with these ads because you are {{raceSentence}} {{imageAnalysisResponse.gender.toLowerCase()}} of {{imageAnalysisResponse.age}} years old.
-        <br>You are {{emotion}}, and you look {{sentence}}.
+        <br>You are {{emotion}} and you look {{sentence}}.
       </div>
 
       <div
