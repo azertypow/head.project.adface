@@ -27,7 +27,7 @@
       <div
           class="v-application-rendering__layout__footer"
       >Return to <br
-      ><a href="https://staging.adface.a-ll.ch" target="_blank" >adface.swiss-digital-initiative.org</a></div>
+      ><a :href="webappBaseUrl" >adface.swiss-digital-initiative.org</a></div>
 
       <div
           class="v-application-rendering__layout__share"
@@ -78,6 +78,10 @@ export default defineComponent({
   },
 
   computed: {
+
+    webappBaseUrl(): string {
+      return params.webappBaseUrl
+    },
 
     emotion(): string {
       if      (this.imageAnalysisResponse.emotion === "fear")     return "fearful"
