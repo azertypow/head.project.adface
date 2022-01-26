@@ -32,7 +32,7 @@
         <br>Marta Revuelta</p>
 
       <p>AI module development and integration:
-        <br>A-LL Tech</p>
+        <br>A-LL Creative Technology</p>
 
     </div>
   </div>
