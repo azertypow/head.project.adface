@@ -5,5 +5,5 @@
  */
 module.exports = {
     publicPath:
-        process.env.NODE_ENV === "production" ? "https://staging.adface.a-ll.ch/" : "http://localhost:8080/"
+        process.env.NODE_ENV === "production" ? "adface.swissdigitalinitiative.ch/" : "http://localhost:8080/"
 }
