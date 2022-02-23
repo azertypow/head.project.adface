@@ -14,15 +14,24 @@
 
       <div
           class="v-application-rendering__layout__id"
-      >ADface{{new Date().getTime()}}
+      >ADface{{generatedID}}
       </div>
 
       <div
-          class="v-application-rendering__layout__txt mmd--child-rm-margin"
+          class="v-application-rendering__layout__txt"
       >
-        <p>This is the profile the algorithm has determined for your picture.</p>
-        <p>You were targeted with these ads because you are {{raceSentence}} {{imageAnalysisResponse.gender.toLowerCase()}} of {{imageAnalysisResponse.age}} years old.
-          <br>You are {{emotion}} and you look {{sentence}}.</p>
+        <transition name="view" mode="out-in"  >
+          <div class="v-application-rendering__layout__txt__details mmd--child-rm-margin" v-if="showReadMore">
+            <p>Quite interesting, no? Maybe also a bit surprising but in any case reason to ask yourself: how trustworthy are the digital services surrounding me?
+              <br>If you’ve enjoyed AdFace please share the website with your friends. What profiles will people you know get? Let’s find out by sharing the link to the experience through the following buttons. Thank you!<span class="v-application-rendering__layout__txt__more font--small" @click="closeReadMore">close</span></p>
+          </div>
+        </transition>
+
+        <div class="mmd--child-rm-margin">
+          <p>This is the profile the algorithm has determined for your picture.</p>
+          <p>You were targeted with these ads because you are {{raceSentence}} {{imageAnalysisResponse.gender.toLowerCase()}} of {{imageAnalysisResponse.age}} years old.
+            <br>You are {{emotion}} and you look {{sentence}}.<span class="v-application-rendering__layout__txt__more font--small" @click="openReadMore">read more</span></p>
+        </div>
       </div>
 
       <div
@@ -75,6 +84,8 @@ export default defineComponent({
   data() {
     return {
       store: useStore(),
+      showReadMore: false,
+      generatedID: new Date().getTime(),
     }
   },
 
@@ -136,6 +147,9 @@ export default defineComponent({
 
       return encodeURI(params.webappBaseUrl)
     },
+
+    openReadMore()  {this.showReadMore = true},
+    closeReadMore() {this.showReadMore = false},
   },
 
 });
@@ -163,6 +177,15 @@ export default defineComponent({
   box-shadow: black 0px 0px 40px 0px;
 }
 
+.v-application-rendering__layout_details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--site-color--main_light);
+}
+
 .v-application-rendering__layout__img {
   width: calc( var(--profile-width) / 2 );
   height: calc( var(--profile-width) / 2 );
@@ -188,6 +211,34 @@ export default defineComponent({
   width: 100%;
   padding-top: var(--text-line-height);
   padding-bottom: var(--text-line-height);
+  position: relative;
+}
+
+.v-application-rendering__layout__txt__more {
+  line-height: var(--text-line-height);
+  color: var(--site-color--secondary);
+  cursor: pointer;
+  float: right
+}
+
+.v-application-rendering__layout__txt__details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--site-color--background);
+  padding-top: var(--text-line-height);
+  box-sizing: border-box;
+  z-index: 100000;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: var(--text-line-height);
+    background: linear-gradient(180deg, #cccccc, transparent);
+  }
 }
 
 .v-application-rendering__layout__footer {
