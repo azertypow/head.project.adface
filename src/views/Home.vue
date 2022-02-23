@@ -27,7 +27,7 @@
             }"
             @click="validateTerm"
         ></div>
-        <p class="mmd--no-margin">I agree to <router-link to="/term">terms and conditions</router-link> to start the&nbsp;experience.</p>
+        <p class="mmd--no-margin">I agree to the <router-link to="/term">terms and conditions</router-link></p>
       </div>
     </div>
 
