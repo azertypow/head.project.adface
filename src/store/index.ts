@@ -7,6 +7,7 @@ export enum MutationTypes {
   SHOW_PROFILE = "showProfile",
   SAVE_SNAP_SHOT = "saveSnapShot",
   SHOW_DIALOGQUE = "showDialogue",
+  SHOW_INTRODUCTION = "showIntroduction",
 }
 
 export default createStore({
@@ -16,6 +17,7 @@ export default createStore({
     showProfile: false,
     snapShot: null as string | null,
     showDialogue: false as boolean,
+    showIntroduction: true,
   },
   mutations: {
     [MutationTypes.ABOUT_IS_OPEN]:(state, payload) => {
@@ -32,6 +34,9 @@ export default createStore({
     },
     [MutationTypes.SHOW_DIALOGQUE]: (state, payload) => {
       state.showDialogue = payload
+    },
+    [MutationTypes.SHOW_INTRODUCTION]: (state, payload) => {
+      state.showIntroduction = payload
     },
   },
   actions: {

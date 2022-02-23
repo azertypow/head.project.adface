@@ -116,9 +116,13 @@ body {
 .mmd-button,
 button {
   all: unset;
-  padding: calc( var(--unit) );
-  font-size: var( --text-font-size );
-  line-height: var(--text-line-height);
+  padding-top: calc( var(--unit) / 2.5 );
+  padding-bottom: calc( var(--unit) / 1.5 );
+  padding-right: calc( var(--unit) );
+  padding-left: calc( var(--unit) );
+  font-size:    calc( var(--text-font-size)   / 1.5 );
+  line-height:  calc( var(--text-line-height) / 1.5 );
+  font-weight: 500;
   display: block;
   background: var(--site-color--color);
   color: var(--site-color--background);

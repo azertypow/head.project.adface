@@ -14,6 +14,12 @@
       </div>
     </transition>
 
+    <transition name="view" mode="out-in"  >
+      <introduction
+          v-if="store.state.showIntroduction"
+      ></introduction>
+    </transition>
+
     <router-view v-slot="{ Component }">
       <transition name="view" mode="out-in"  >
         <component :is="Component" />
@@ -50,9 +56,10 @@ import {useStore} from "vuex"
 import ApplicationRendering from "@/components/ApplicationRendering.vue"
 import {MutationTypes} from "@/store"
 import {defineComponent} from "vue"
+import Introduction from "@/components/Introduction.vue"
 
 export default defineComponent({
-  components: {ApplicationRendering, Navigation},
+  components: {Introduction, ApplicationRendering, Navigation},
 
   data(){
     return {
