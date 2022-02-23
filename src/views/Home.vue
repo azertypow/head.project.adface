@@ -14,7 +14,7 @@
         v-if="showForm"
     >
       <div class="v-home__text mmd--with-padding mmd--child-rm-margin">
-        <p>Swiss Digital Initiative presents ADface, an&nbsp;experience about digital trust, and&nbsp;how ″facial analysis technologies″ are deployed in targeted&nbsp;advertising.</p>
+        <p>Swiss Digital Initiative presents ADface, an interactive experience on how facial analysis technologies are deployed in targeted advertising. This is an interactive experience and takes around 2 minutes. The experience invites you to reflect on opportunities and risks of  algorithmic decision-making and aims to raise awareness for AI ethics and digital&nbsp;trust.</p>
       </div>
 
       <div
