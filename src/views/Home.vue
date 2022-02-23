@@ -107,7 +107,6 @@ export default defineComponent({
 
   computed: {
     showResult(): boolean {
-      console.log( this.store.state.imageAnalysisResponse )
       return this.store.state.imageAnalysisResponse !== null
     },
 
