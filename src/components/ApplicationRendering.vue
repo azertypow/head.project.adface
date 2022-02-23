@@ -18,10 +18,11 @@
       </div>
 
       <div
-          class="v-application-rendering__layout__txt"
+          class="v-application-rendering__layout__txt mmd--child-rm-margin"
       >
-        You were targeted with these ads because you are {{raceSentence}} {{imageAnalysisResponse.gender.toLowerCase()}} of {{imageAnalysisResponse.age}} years old.
-        <br>You are {{emotion}} and you look {{sentence}}.
+        <p>This is the profile the algorithm has determined for your picture.</p>
+        <p>You were targeted with these ads because you are {{raceSentence}} {{imageAnalysisResponse.gender.toLowerCase()}} of {{imageAnalysisResponse.age}} years old.
+          <br>You are {{emotion}} and you look {{sentence}}.</p>
       </div>
 
       <div
