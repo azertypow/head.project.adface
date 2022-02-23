@@ -1,7 +1,7 @@
 <template>
   <div class="v-introduction">
 
-    <div class="v-introduction__content mmd--child-rm-margin">
+    <div class="v-introduction__content">
       <h3>What does your face say about you?</h3>
       <ul>
         <li>Tick the box "I agree to terms and conditions to start the experience" and allow the camera.</li>
@@ -49,6 +49,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 button {
   margin-top: var(--text-line-height);
+  margin-bottom: calc( var(--text-line-height) * 2 );
 }
 
 .v-introduction {
@@ -72,6 +73,11 @@ button {
   max-width: 30em;
   padding-top:    calc( var(--nav-height) * 2 );
   padding-bottom: calc( var(--nav-height) * 2 );
+
+
+  >*:first-child {
+    margin-top: 0;
+  }
 }
 
 ul {
