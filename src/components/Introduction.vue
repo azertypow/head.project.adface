@@ -65,14 +65,12 @@ button {
 }
 
 .v-introduction__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 100%;
   max-width: 30em;
-  padding-top:    calc( var(--nav-height) * 2 );
+  padding-top:    calc( var(--nav-height) * 1 );
   padding-bottom: calc( var(--nav-height) * 2 );
+  margin: auto;
 
 
   >*:first-child {
