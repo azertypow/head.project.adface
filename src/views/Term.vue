@@ -12,7 +12,7 @@
       <p>The web experience is based on AI-based facial analysis technologies such as emotion detection algorithms that allow for increasingly effective targeted advertisements and present a high incentive for the collection of personal data for advertising&nbsp;purposes.</p>
       <p>If you want to interact, we need to see and analyze your face. It is for this reason that this experiment requires your consent to use your camera to capture your face, and analyze it by a face recognition and attribution system capable of detecting your gender, age, emotions and&nbsp;ethnicity.</p>
       <p>In order to generate target ads that match your facial profile, the facial analysis algorithms used in this experiment are based on an open-sourced library called DeepFace, a deep learning facial recognition system created by a research group at Facebook. You can read more about or find the source code&nbsp;<a target="_blank" href="https://github.com/serengil/deepface" >here</a>.</p>
-      <p>All face detection algorithms are performed on your own computer, in the browser. However, to perform the face attributes analysis, the picture of your face is sent to our server, which is then destroyed once the process is&nbsp;completed.</p>
+      <p>All face detection algorithms are performed on your own computer, in the browser. However, to perform the face attributes analysis, the picture of your face is sent to our Swiss-based server, which is then destroyed once the process is&nbsp;completed.</p>
       <p>No personal data is collected on our server in any&nbsp;way.</p>
       <p>Try it yourself at <router-link to="/" >adface.swissdigitalinitiative.ch</router-link></p>
     </div>
