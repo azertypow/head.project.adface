@@ -64,7 +64,7 @@ export function randomIntFromInterval(min: number, max: number) { // min and max
 export const DURATION_PARAMETERS = {
   agreeAndCamera:             3_500, //ms
   cameraDuration:             2_500, //ms
-  addsInterval:               500, //ms
+  addsInterval:               250, //ms
   beforeShowingShareProfile:  1_000, //ms
 }
 
