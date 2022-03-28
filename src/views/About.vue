@@ -34,6 +34,10 @@
       <p>AI module development and integration:
         <br>A-LL Creative Technology</p>
 
+      <p>Project management Swiss Digital initiative:
+        <br>Niniane Paeffgen
+        <br>Nicolas Zahn</p>
+
     </div>
   </div>
 </template>
