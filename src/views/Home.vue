@@ -223,30 +223,30 @@ export default defineComponent({
 
       // -----
       // dev prototype
-      this.imageAnalyseResponse = {
-        instance_1: {
-          race: {
-            "East Asian": 90,
-            "Southeast Asian": 0,
-            "Indian": 0,
-            "Black": 0,
-            "White": 0,
-            "Middle-Eastern": 0,
-            "Latino-Hispanic": 0,
-          },
-          gender: 'Man',
-          emotion: {
-            angry: 100,
-            disgust: 0,
-            fear: 0,
-            happy: 0,
-            neutral: 0,
-            sad: 0,
-            surprise: 0,
-          },
-          age: 40,
-        }
-      }
+      // this.imageAnalyseResponse = {
+      //   instance_1: {
+      //     race: {
+      //       "East Asian": 90,
+      //       "Southeast Asian": 0,
+      //       "Indian": 0,
+      //       "Black": 0,
+      //       "White": 0,
+      //       "Middle-Eastern": 0,
+      //       "Latino-Hispanic": 0,
+      //     },
+      //     gender: 'Man',
+      //     emotion: {
+      //       angry: 100,
+      //       disgust: 0,
+      //       fear: 0,
+      //       happy: 0,
+      //       neutral: 0,
+      //       sad: 0,
+      //       surprise: 0,
+      //     },
+      //     age: 40,
+      //   }
+      // }
       //-----
 
 
