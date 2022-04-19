@@ -14,7 +14,7 @@
         v-if="showForm"
     >
       <div class="v-home__text mmd--with-padding mmd--child-rm-margin">
-        <p>Swiss Digital Initiative presents ADface, an interactive experience on how facial analysis technologies are deployed in targeted advertising. This is an interactive experience and takes around 2 minutes. The experience invites you to reflect on opportunities and risks of  algorithmic decision-making and aims to raise awareness for AI ethics and digital&nbsp;trust.</p>
+        <p>The Swiss Digital Initiative presents ADface, an interactive experience on how facial analysis technologies are deployed in targeted advertising. This is an interactive experience and takes around 2 minutes. The experience invites you to reflect on opportunities and risks of algorithmic decision-making and aims to raise awareness for AI ethics and digital&nbsp;trust.</p>
       </div>
 
       <div
@@ -58,6 +58,10 @@
           class="v-home__overlay"
           ref="canvasOverlay"
       />
+
+      <small
+          class="v-home__video__description"
+      >Keep watching the screen so that your face appears within the blue box for the analysis.</small>
     </div>
 
   </div>
@@ -461,6 +465,16 @@ async startImageProcess(): Promise<IImageAnalysisResponse> {
     transition: opacity 1s ease-in-out;
     opacity: 1;
   }
+}
+
+.v-home__video__description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(0, 100%);
+  display: block;
+  font-size: calc( var(--text-line-height) / 2.4 );
+  line-height: calc( var(--text-line-height) / 2 );
 }
 
 .v-home__img-render {

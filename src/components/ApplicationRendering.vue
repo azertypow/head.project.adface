@@ -5,63 +5,82 @@
         class="v-application-rendering__layout"
     >
 
-
-      <div
-          class="v-application-rendering__layout__img"
-      >
-        <img :src="store.state.snapShot" alt="">
-      </div>
-
-      <div
-          class="v-application-rendering__layout__id"
-      >ADface{{generatedID}}
-      </div>
-
-      <div
-          class="v-application-rendering__layout__txt"
-      >
-        <div class="mmd--child-rm-margin">
-          <p>This is the profile the algorithm has determined for your&nbsp;picture.</p>
-          <p>You were targeted with these ads because you are {{ raceSentence }}
-            {{ imageAnalysisResponse.gender.toLowerCase() }} of {{ imageAnalysisResponse.age }} years old.
-            <br>You are {{ emotion }} and you look {{ sentence }}.</p>
-          <p>Quite interesting, no? Maybe also a bit surprising but in any case reason to ask yourself: how trustworthy
-            are the digital services surrounding&nbsp;me?</p>
-
-          <p>If you’ve enjoyed AdFace please share the website with your friends. What profiles will people you know
-            get? Let’s find out by sharing the link to the experience through the following buttons. Thank&nbsp;you!</p>
-
+      <div class="v-application-rendering__layout__header">
+        <div
+            class="v-application-rendering__layout__header__img"
+            :style="{
+                  maxHeight: imgHeight,
+               }"
+        >
+          <img :src="store.state.snapShot"
+               alt=""
+               ref="imgProfile"
+          >
+        </div>
+        <div
+            class="v-application-rendering__layout__header__id"
+        >ADface{{generatedID}}
         </div>
       </div>
 
       <div
-          class="v-application-rendering__layout__footer"
-      >Return to <br
-      ><a :href="webappBaseUrl" >adface.swissdigitalinitiative.ch</a></div>
+          class="v-application-rendering__layout__body"
+          @scroll="onScrollInBodyResult"
+      >
+        <div
+            class="v-application-rendering__layout__body__txt"
+        >
+          <div class="mmd--child-rm-margin">
+            <p>This is the profile the algorithm has determined for your&nbsp;picture.</p>
+            <p>You were targeted with these ads because you are {{ raceSentence }}
+              {{ imageAnalysisResponse.gender.toLowerCase() }} of {{ imageAnalysisResponse.age }} years old.
+              <br>You are {{ emotion }} and you look {{ sentence }}.</p>
+            <p>Quite interesting, no? Maybe also a bit surprising but in any case reason to ask yourself: how trustworthy
+              are the digital services surrounding&nbsp;me?</p>
+
+            <p>If you’ve enjoyed ADFace please share the website with your friends. What profiles will people you know
+              get? Let’s find out by sharing the link to the experience through the following buttons. Thank&nbsp;you!
+            </p>
+            <p>Please also visit <br><a href="https://www.swiss-digital-initiative.org/aiethics-adface/" >swiss-digital-initiative.org/aiethics-adface/</a></p>
+
+          </div>
+        </div>
+      </div>
+
 
       <div
-          class="v-application-rendering__layout__share"
+          class="v-application-rendering__layout__footer"
       >
-              <div
-                  class="v-application-rendering__share-link"
-                  @click="shareClicked"
-                  title="Copy to Clipoard"
-              ><img src="../assets/copy_paste.svg" alt="copy sharing"></div>
+        <div
+        >Return to <br
+        ><a :href="webappBaseUrl" >adface.swissdigitalinitiative.ch</a>
+        </div>
 
-              <a
-                  class="v-application-rendering__share-link"
-                  target="_blank"
-                  title="Share on Facebook"
-                  :href="getUrlToShare('facebook')"
-              ><img src="../assets/facebook.svg" alt="facebook sharing"></a>
+        <div
+            class="v-application-rendering__layout__footer__share"
+        >
+                <div
+                    class="v-application-rendering__share-link"
+                    @click="shareClicked"
+                    title="Copy to Clipoard"
+                ><img src="../assets/copy_paste.svg" alt="copy sharing"></div>
 
-              <a
-                  class="v-application-rendering__share-link"
-                  target="_blank"
-                  title="Share on Twitter"
-                  :href="getUrlToShare('twitter')"
-              ><img src="../assets/twitter.svg" alt="twitter sharing"></a>
+                <a
+                    class="v-application-rendering__share-link"
+                    target="_blank"
+                    title="Share on Facebook"
+                    :href="getUrlToShare('facebook')"
+                ><img src="../assets/facebook.svg" alt="facebook sharing"></a>
+
+                <a
+                    class="v-application-rendering__share-link"
+                    target="_blank"
+                    title="Share on Twitter"
+                    :href="getUrlToShare('twitter')"
+                ><img src="../assets/twitter.svg" alt="twitter sharing"></a>
+        </div>
       </div>
+
 
     </div>
 
@@ -86,10 +105,18 @@ export default defineComponent({
       store: useStore(),
       showReadMore: false,
       generatedID: new Date().getTime(),
+      imgHeightValue: null as null | number,
+      imgHeightHeightRef: null as null | number,
     }
   },
 
   computed: {
+
+    imgHeight(): string {
+      if(this.imgHeightValue === null) return ""
+      if(this.imgHeightValue < 0 ) return "0"
+      return this.imgHeightValue + 'px'
+    },
 
     webappBaseUrl(): string {
       return params.webappBaseUrl
@@ -134,6 +161,17 @@ export default defineComponent({
       })
     },
 
+    onScrollInBodyResult(e: Event) {
+      if(! (e.target instanceof HTMLElement) )    return
+
+      if( this.imgHeightHeightRef === null ) {
+        if(! (this.$refs.imgProfile instanceof HTMLElement) )  return
+        this.imgHeightHeightRef = this.$refs.imgProfile.getBoundingClientRect().height
+      }
+
+      this.imgHeightValue = this.imgHeightHeightRef - e.target.scrollTop
+    },
+
     getUrlToShare(get: null | "facebook" | "twitter"): string {
 
       const twitterText     = `Try ADface on `
@@ -172,23 +210,35 @@ export default defineComponent({
   background: var(--site-color--background);
   padding: var(--text-line-height);
   width: var(--profile-width);
+  height: var(--profile-width);
+  max-height: calc(100vh - var(--gutter));
   box-shadow: black 0 0 40px 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.v-application-rendering__layout_details {
+.v-application-rendering__layout__header {
+  pointer-events: none !important;
+  user-select: none;
   position: absolute;
   top: 0;
   left: 0;
+  box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  background: var(--site-color--main_light);
+  padding: var(--text-line-height);
+  padding-bottom: calc( var(--text-line-height) / 2 );
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: var(--site-color--background);
+  z-index: 1;
+  box-shadow: 0 -10px 20px 20px var(--site-color--background);
 }
 
-.v-application-rendering__layout__img {
+.v-application-rendering__layout__header__img {
   width: calc( var(--profile-width) / 2 );
   height: calc( var(--profile-width) / 2 );
-  padding-right: var(--text-line-height);
   box-sizing: border-box;
+  padding-right: var(--text-line-height);
 
   > img {
     display: block;
@@ -199,16 +249,29 @@ export default defineComponent({
   }
 }
 
-.v-application-rendering__layout__id {
+.v-application-rendering__layout__header__id {
   width: 50%;
   text-align: left;
   transform: translate(0px, -6px);
 }
 
-.v-application-rendering__layout__txt {
+.v-application-rendering__layout__body {
   width: 100%;
-  padding-top: var(--text-line-height);
-  padding-bottom: var(--text-line-height);
+  height: 100%;
+  position: relative;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.v-application-rendering__layout__body__txt {
+  width: 100%;
+  padding-top: calc( var(--profile-width) / 2 + var(--text-line-height));
+  padding-bottom: calc( var(--text-line-height) * 4);
   position: relative;
 }
 
@@ -240,23 +303,32 @@ export default defineComponent({
 }
 
 .v-application-rendering__layout__footer {
-  padding-top: var(--text-line-height);
-  width: calc(100% - 150px);
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: var(--text-line-height);
+  padding-right: var(--text-line-height);
+  padding-bottom: var(--text-line-height);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 1;
+  background-color: var(--site-color--background);
+  box-shadow: 0 10px 20px 20px var(--site-color--background);
 }
 
-.v-application-rendering__layout__share {
-  position: absolute;
-  bottom: calc( var(--text-line-height) - 5px);
-  right: var(--text-line-height);
+.v-application-rendering__layout__footer__share {
   display: flex;
   flex-grow: 1;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 
 .v-application-rendering__share-link {
-  width: 100%;
   display: block;
   border: none;
   padding: 5px;
@@ -266,6 +338,7 @@ export default defineComponent({
   > img {
     width: 30px;
     height: auto;
+    display: block;
   }
 }
 

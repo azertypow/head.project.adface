@@ -2,26 +2,17 @@
   <div class="v-introduction">
 
     <div class="v-introduction__content">
-      <p>The Swiss Digital Initiative presents ADface, an interactive experience on how facial analysis technologies are
-        deployed in targeted advertising. This is an interactive experience and takes around 2 minutes. The experience
-        invites you to reflect on opportunities and risks of algorithmic decision-making and aims to raise awareness for
-        AI ethics and digital&nbsp;trust.</p>
-      <p>To start the experience, please allow access to your webcam (refresh the page if you are not prompted) and
-        agree to the terms and&nbsp;conditions.</p>
+      <p>To start the <b>interactive</b> experience <b>ADFace</b>, please allow access to your webcam (refresh the page if you are not prompted) and agree to the terms and conditions.</p>
 
-      <h3>What does your face say about you? The steps of the experience after&nbsp;“Start”</h3>
-
-      <ul>
-        <li>Tick the box "I agree to terms and conditions to start the experience" and allow the&nbsp;camera.</li>
-        <li>Smile! On the right side, your face is being read and analysed by&nbsp;algorithms.</li>
-        <li>You will receive targeted advertisements based on who the algorithm thinks you&nbsp;are.</li>
-        <li>In the end, discover your personal profile based on which you received the&nbsp;ads.</li>
-        <li>Imagine, if algorithms not only decide what kind of ads you will receive, but also what kind of information,
-          jobs or health insurance, you will have access&nbsp;to.
-        </li>
-        <li>Please share your thoughts and profile via social media and invite others to the&nbsp;experience!</li>
-      </ul>
-
+      <h3>What does your face say about you? The steps of the experience after “Start”</h3>
+      <ol>
+        <li>Tick the box "I agree to terms and conditions to start the experience" and allow the camera.</li>
+        <li>Smile! On the right side, your face is being read and analysed by algorithms.</li>
+        <li>You will receive targeted advertisements based on who the algorithm thinks you are.</li>
+        <li>In the end, discover your personal profile based on which you received the ads.</li>
+        <li>Imagine, if algorithms not only decide what kind of ads you will receive, but also what kind of information, jobs or health insurance, you will have access to.</li>
+        <li>Please share your thoughts and profile via social media and invite others to the experience!</li>
+      </ol>
       <button
           @click="startExperience"
       >start ADface!
@@ -88,20 +79,22 @@ button {
   }
 }
 
-ul {
-  padding-left: 0;
+ol {
 }
 
-li {
-  display: block;
-  position: relative;
-  padding-left: calc( var(--gutter) * 2 );
-
-  &:before{
-    content: '— ';
+ul {
+  padding-left: 0;
+  li {
     display: block;
-    position: absolute;
-    left: 0;
+    position: relative;
+    padding-left: calc( var(--gutter) * 2 );
+
+    &:before{
+      content: '— ';
+      display: block;
+      position: absolute;
+      left: 0;
+    }
   }
 }
 </style>
