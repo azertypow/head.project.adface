@@ -20,17 +20,17 @@
       <div
           class="v-application-rendering__layout__txt"
       >
-        <transition name="view" mode="out-in"  >
-          <div class="v-application-rendering__layout__txt__details mmd--child-rm-margin" v-if="showReadMore">
-            <p>Quite interesting, no? Maybe also a bit surprising but in any case reason to ask yourself: how trustworthy are the digital services surrounding me?
-              <br>If you’ve enjoyed AdFace please share the website with your friends. What profiles will people you know get? Let’s find out by sharing the link to the experience through the following buttons. Thank you!<span class="v-application-rendering__layout__txt__more font--small" @click="closeReadMore">close</span></p>
-          </div>
-        </transition>
-
         <div class="mmd--child-rm-margin">
-          <p>This is the profile the algorithm has determined for your picture.</p>
-          <p>You were targeted with these ads because you are {{raceSentence}} {{imageAnalysisResponse.gender.toLowerCase()}} of {{imageAnalysisResponse.age}} years old.
-            <br>You are {{emotion}} and you look {{sentence}}.<span class="v-application-rendering__layout__txt__more font--small" @click="openReadMore">read more</span></p>
+          <p>This is the profile the algorithm has determined for your&nbsp;picture.</p>
+          <p>You were targeted with these ads because you are {{ raceSentence }}
+            {{ imageAnalysisResponse.gender.toLowerCase() }} of {{ imageAnalysisResponse.age }} years old.
+            <br>You are {{ emotion }} and you look {{ sentence }}.</p>
+          <p>Quite interesting, no? Maybe also a bit surprising but in any case reason to ask yourself: how trustworthy
+            are the digital services surrounding&nbsp;me?</p>
+
+          <p>If you’ve enjoyed AdFace please share the website with your friends. What profiles will people you know
+            get? Let’s find out by sharing the link to the experience through the following buttons. Thank&nbsp;you!</p>
+
         </div>
       </div>
 
@@ -148,8 +148,6 @@ export default defineComponent({
       return encodeURI(params.webappBaseUrl)
     },
 
-    openReadMore()  {this.showReadMore = true},
-    closeReadMore() {this.showReadMore = false},
   },
 
 });
