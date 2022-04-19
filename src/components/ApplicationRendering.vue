@@ -172,7 +172,7 @@ export default defineComponent({
   background: var(--site-color--background);
   padding: var(--text-line-height);
   width: var(--profile-width);
-  box-shadow: black 0px 0px 40px 0px;
+  box-shadow: black 0 0 40px 0;
 }
 
 .v-application-rendering__layout_details {
