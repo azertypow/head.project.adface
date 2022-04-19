@@ -135,13 +135,13 @@ export default defineComponent({
       nets.tinyFaceDetector.load(params.webappBaseUrl).then(() => {
         console.info("tinyFaceDetector loaded")
       }).catch(reason => {
-        console.log(reason)
+        console.error(reason)
       })
 
       nets.faceLandmark68TinyNet.load(params.webappBaseUrl).then(() => {
         console.info("faceLandmark68TinyNet loaded")
       }).catch(reason => {
-        console.log(reason)
+        console.error(reason)
       })
     },
 
@@ -203,7 +203,6 @@ export default defineComponent({
         this.startImageProcess().then(analyseResp => {
           this.imageAnalyseResponse = analyseResp
           this.showSnap = true
-          console.log("result ok")
         }).catch(reason => {
           console.error("image process error: \n" + reason)
 
@@ -262,7 +261,6 @@ export default defineComponent({
             }
 
             this.store.commit(MutationTypes.IMG_ANALYSIS_RESP, cleanAnalyseResponse)
-            console.log("analyse added")
           } else {
             console.error("saveAnalyseResponse error")
             // try again

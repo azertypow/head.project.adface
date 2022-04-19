@@ -146,7 +146,6 @@ export default defineComponent({
     },
 
     imageAnalysisResponse(): IImageAnalysis {
-      console.log( this.store.state.imageAnalysisResponse )
       return this.store.state.imageAnalysisResponse
     }
   },
@@ -157,7 +156,6 @@ export default defineComponent({
   methods: {
     shareClicked() {
       navigator.clipboard.writeText( this.getUrlToShare(null) ).then(() => {
-        console.log("share clicked")
       })
     },
 
